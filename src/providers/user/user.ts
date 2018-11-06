@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 
 import { Api } from '../api/api';
 
+
 /**
  * Most apps have the concept of a User. This is a simple provider
  * with stubs for login/signup/etc.
@@ -38,6 +39,7 @@ export class User {
 
     seq.subscribe((res: any) => {
       // If the API returned a successful response, mark the user as logged in
+      console.log(res.status)
       if (res.status == 'success') {
         this._loggedIn(res);
       } else {

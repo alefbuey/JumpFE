@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
  */
 @Injectable()
 export class Api {
-  url: string = 'https://example.com/api/v1';
+  url: string = 'http://192.168.0.108:8100';
 
   constructor(public http: HttpClient) {
   }
@@ -25,11 +25,13 @@ export class Api {
         reqOpts.params = reqOpts.params.set(k, params[k]);
       }
     }
-
     return this.http.get(this.url + '/' + endpoint, reqOpts);
   }
 
   post(endpoint: string, body: any, reqOpts?: any) {
+
+    
+
     return this.http.post(this.url + '/' + endpoint, body, reqOpts);
   }
 
