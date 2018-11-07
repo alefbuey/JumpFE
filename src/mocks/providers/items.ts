@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 
 import { Item } from '../../models/item';
-
 @Injectable()
 export class Items {
   items: Item[] = [];
@@ -51,7 +50,6 @@ export class Items {
         "about": "Paul is a Puppy."
       }
     ];
-
     for (let item of items) {
       this.items.push(new Item(item));
     }

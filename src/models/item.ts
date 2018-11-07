@@ -20,5 +20,20 @@ export class Item {
 }
 
 export interface Item {
-  [prop: string]: any;
+    id: number,
+    idemployer: number,
+    mode: number,
+    state: number,
+    idlocation: number  ,
+    title: string,
+    description: string,
+    jobcost: number,
+    jobcostcovered: number,
+    dateposted: string,
+    datestart: string,
+    dateend: string,
+    datepostend: string,
+    numbervacancies: number,
+    createdAt: string,
+    updatedAt: string
 }
