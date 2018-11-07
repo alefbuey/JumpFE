@@ -3,6 +3,7 @@ import { IonicPage, ModalController, NavController } from 'ionic-angular';
 
 import { Item } from '../../models/item';
 import { Items } from '../../providers';
+import { Observable } from 'rxjs/Observable';
 
 @IonicPage()
 @Component({
@@ -10,10 +11,10 @@ import { Items } from '../../providers';
   templateUrl: 'list-master.html'
 })
 export class ListMasterPage {
-  currentItems;//: Item[];
-
-  constructor(public navCtrl: NavController, public items: Items, public modalCtrl: ModalController) {
-    this.currentItems = this.items.query();
+  currentItems : Items;
+  constructor(public navCtrl: NavController, public items: Items, public modalCtrl: ModalController){
+    //this.currentItems = this.items.query()
+    this.items.query().subscribe(res => this.currentItems = res);
   }
 
   /**

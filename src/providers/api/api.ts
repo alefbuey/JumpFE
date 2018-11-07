@@ -1,12 +1,14 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
+import {Items} from '../../providers/items/items';
+import {Item} from '../../models/item';
 /**
  * Api is a generic REST Api handler. Set your API url first.
  */
 @Injectable()
 export class Api {
-  url: string = 'http://192.168.0.108:8100';
+  url: string = 'http://localhost:8100';
 
   constructor(public http: HttpClient) {
   }
