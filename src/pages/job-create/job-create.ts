@@ -5,15 +5,15 @@ import { IonicPage, NavController, ViewController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-item-create',
-  templateUrl: 'item-create.html'
+  selector: 'page-job-create',
+  templateUrl: 'job-create.html'
 })
-export class ItemCreatePage {
+export class JobCreatePage {
   @ViewChild('fileInput') fileInput;
 
   isReadyToSave: boolean;
 
-  item: any;
+  job: any;
 
   form: FormGroup;
 
@@ -73,7 +73,7 @@ export class ItemCreatePage {
   }
 
   /**
-   * The user is done and wants to create the item, so return it
+   * The user is done and wants to create the job, so return it
    * back to the presenter.
    */
   done() {

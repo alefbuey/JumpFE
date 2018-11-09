@@ -7,7 +7,7 @@
  * The Items service manages creating instances of Item, so go ahead and rename
  * that something that fits your app as well.
  */
-export class Item {
+export class Job {
 
   constructor(fields: any) {
     // Quick and dirty extend/assign fields to this model
@@ -19,21 +19,15 @@ export class Item {
 
 }
 
-export interface Item {
-    id: number,
+
+export interface Job{
     idemployer: number,
-    mode: number,
-    state: number,
-    idlocation: number  ,
+    idjob: number,
+    jobmode: number,
+    imageEmployer: string,
+    nameEmploye: string,
     title: string,
-    description: string,
     jobcost: number,
-    jobcostcovered: number,
     dateposted: string,
-    datestart: string,
-    dateend: string,
-    datepostend: string,
-    numbervacancies: number,
-    createdAt: string,
-    updatedAt: string
+    numbervacancies: number
 }

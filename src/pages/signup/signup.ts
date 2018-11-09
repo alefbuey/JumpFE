@@ -17,11 +17,10 @@ export class SignupPage {
   account: { name: string, lastname: string, email: string, password: string, gender: string, birthdate: string} = {
     name: 'Your Name',
     lastname: 'Your lastname',
-    email: 'test@example.com',
-    password: 'test',
+    birthdate: '2018-01-01',
     gender: 'M',
-    birthdate: '2018-01-01'
-
+    email: 'test@example.com',
+    password: 'test'  
   };
 
   // Our translated text strings
@@ -38,12 +37,14 @@ export class SignupPage {
   }
 
   doSignup() {
+    console.log(this.account)
     // Attempt to login in through our User service
     this.user.signup(this.account).subscribe((resp) => {
+      
       this.navCtrl.push(MainPage);
     }, (err) => {
 
-      this.navCtrl.push(MainPage);
+      //this.navCtrl.push(MainPage);
 
       // Unable to sign up
       let toast = this.toastCtrl.create({

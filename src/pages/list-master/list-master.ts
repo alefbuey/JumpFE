@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, ModalController, NavController } from 'ionic-angular';
-
-import { Item } from '../../models/item';
-import { Items } from '../../providers';
-import { Observable } from 'rxjs/Observable';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { Job } from '../../models/job';
+import { Jobs } from '../../providers';
 
 @IonicPage()
 @Component({
@@ -11,45 +10,65 @@ import { Observable } from 'rxjs/Observable';
   templateUrl: 'list-master.html'
 })
 export class ListMasterPage {
-  currentItems : Items;
-  constructor(public navCtrl: NavController, public items: Items, public modalCtrl: ModalController){
-    //this.currentItems = this.items.query()
-    this.items.query().subscribe(res => this.currentItems = res);
+  currentJobs : Jobs;
+
+  safeUrl:  SafeResourceUrl;
+
+  private urlValue: string;
+  
+  get url(): string {
+    return this.urlValue
+  };
+  set url(value: string) {
+    this.urlValue = value;
+    this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(value);
+  }
+
+
+
+  constructor(public navCtrl: NavController, public jobs: Jobs, public modalCtrl: ModalController, private sanitizer: DomSanitizer){
+    //this.currentJobs = this.jobs.query()
+    this.jobs.query().subscribe(res => this.currentJobs = res);
   }
 
   /**
-   * The view loaded, let's query our items for the list
+   * The view loaded, let's query our jobs for the list
    */
   ionViewDidLoad() {
   }
 
   /**
-   * Prompt the user to add a new item. This shows our ItemCreatePage in a
-   * modal and then adds the new item to our data source if the user created one.
+   * Prompt the user to add a new job. This shows our JobCreatePage in a
+   * modal and then adds the new job to our data source if the user created one.
    */
-  addItem() {
-    let addModal = this.modalCtrl.create('ItemCreatePage');
-    addModal.onDidDismiss(item => {
-      if (item) {
-        this.items.add(item);
+  addJob() {
+    let addModal = this.modalCtrl.create('JobCreatePage');
+    addModal.onDidDismiss(job => {
+      if (job) {
+        this.jobs.add(job);
       }
     })
     addModal.present();
   }
 
   /**
-   * Delete an item from the list of items.
+   * Delete an job from the list of jobs.
    */
-  deleteItem(item) {
-    this.items.delete(item);
+  deleteJob(job) {
+    this.jobs.delete(job);
   }
 
   /**
-   * Navigate to the detail page for this item.
+   * Navigate to the detail page for this job.
    */
-  openItem(item: Item) {
-    this.navCtrl.push('ItemDetailPage', {
-      item: item
+  openJob(job: Job) {
+    this.navCtrl.push('JobDetailPage', {
+      job: job
     });
+  }
+
+  showImage(job: Job){
+    //return 'blob:http://localhost/home/ferz/Proyectos/JumpBE/' + job.imageEmployer
+    return '../../assets/' + job.imageEmployer
   }
 }

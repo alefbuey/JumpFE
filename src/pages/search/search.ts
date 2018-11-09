@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import { Item } from '../../models/item';
-import { Items } from '../../providers';
+import { Job } from '../../models/job';
+import { Jobs } from '../../providers';
 
 @IonicPage()
 @Component({
@@ -11,30 +11,30 @@ import { Items } from '../../providers';
 })
 export class SearchPage {
 
-  currentItems: any = [];
+  currentJobs: any = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public items: Items) { }
+  constructor(public navCtrl: NavController, public navParams: NavParams, public jobs: Jobs) { }
 
   /**
-   * Perform a service for the proper items.
+   * Perform a service for the proper jobs.
    */
-  getItems(ev) {
+  getJobs(ev) {
     let val = ev.target.value;
     if (!val || !val.trim()) {
-      this.currentItems = [];
+      this.currentJobs = [];
       return;
     }
-    this.currentItems = this.items.query({
+    this.currentJobs = this.jobs.query({
       name: val
     });
   }
 
   /**
-   * Navigate to the detail page for this item.
+   * Navigate to the detail page for this job.
    */
-  openItem(item: Item) {
-    this.navCtrl.push('ItemDetailPage', {
-      item: item
+  openJob(job: Job) {
+    this.navCtrl.push('JobDetailPage', {
+      job: job
     });
   }
 

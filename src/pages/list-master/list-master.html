@@ -4,7 +4,7 @@
     <ion-title>{{ 'LIST_MASTER_TITLE' | translate }}</ion-title>
 
     <ion-buttons end>
-      <button ion-button icon-only (click)="addItem()">
+      <button ion-button icon-only (click)="addJob()">
         <ion-icon name="add"></ion-icon>
       </button>
     </ion-buttons>
@@ -15,18 +15,22 @@
 <ion-content>
 
   <ion-list>
-    <ion-item-sliding *ngFor="let item of currentItems">
-      <button ion-item (click)="openItem(item)">
-        <ion-avatar item-start>
-          <img [src]="item.profilePic" />
-        </ion-avatar>
-        <h2>{{item.title}}</h2>
-        <p>{{item.description}}</p>
-        <ion-note item-end *ngIf="item.datestart">{{item.datestart}}</ion-note>
+    <ion-item-sliding *ngFor="let job of currentJobs">
+      <button ion-item (click)="openJob(job)">
+        <ion-row align-items-center>
+            <ion-avatar item-start>
+                <img [src]="showImage(job)"><img>
+            </ion-avatar>
+            <h2>{{job.nameEmploye}}</h2>
+        </ion-row>
+        <h2>{{job.title}}</h2>
+        <p >Salary: {{job.jobcost}}</p>
+        <p>Vacancies: {{job.numbervacancies}}</p>
+        <p>Posted: {{job.dateposted}}</p>
       </button>
 
       <ion-item-options>
-        <button ion-button color="danger" (click)="deleteItem(item)">
+        <button ion-button color="danger" (click)="deleteJob(job)">
           {{ 'DELETE_BUTTON' | translate }}
         </button>
       </ion-item-options>
