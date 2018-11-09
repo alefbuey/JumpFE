@@ -1,7 +1,10 @@
 {
   "NAME": "Nombre",
+  "LASTNAME": "Apellido",
   "PASSWORD": "Contraseña",
   "EMAIL": "Email",
+  "GENDER": "Género",
+  "BIRTHDATE": "Fecha de nacimiento",
   "LOGIN": "Iniciar sesión",
   "SIGNUP": "Registrarse",
 
