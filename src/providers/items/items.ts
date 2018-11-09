@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Item } from '../../models/item';
 import { Api } from '../api/api';
 import { Observable } from 'rxjs/Observable';
+import { User } from '../user/user'
 
 @Injectable()
 export class Items {
@@ -26,20 +27,12 @@ export class Items {
     updatedAt: "2018-11-05T23:21:52.655Z"
 };
 
-  constructor( public api: Api) {
-//    this.items = this.api.get('/feed/true/1').map((response: Response) => response.json() as Item);
-    // let items =  JSON.parse(this.ab2str(this.api.get('/feed/true/1')));
-    // console.log(items);
-    
-  }
+  constructor( public api: Api, public user: User) {}
   
 
   query(params?: any) : Observable<Items> {
-    return this.api.get('feed/true/1').map(res => (res as unknown) as Items);
-    // subscribe();
-  
-  //return this.api.get('/feed/true/1').subscribe((response: Response) => response.json() as Item)
-}
+    return this.api.get('feed/true/'+ this.user._user).map(res => (res as any) as Items);
+  }
 
   add(item: Item) {
   }

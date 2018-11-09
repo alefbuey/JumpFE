@@ -2,9 +2,12 @@
   "BACK_BUTTON_TEXT": "Back",
 
   "NAME": "Name",
+  "LASTNAME": "Lastname",
   "EMAIL": "Email",
   "USERNAME": "Username",
   "PASSWORD": "Password",
+  "GENDER": "Gender",
+  "BIRTHDATE": "Brithdate",
   "LOGIN": "Sign in",
   "SIGNUP": "Sign up",
 
