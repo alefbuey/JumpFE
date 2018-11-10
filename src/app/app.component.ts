@@ -15,7 +15,10 @@ import { Settings } from '../providers';
       </ion-toolbar>
     </ion-header>
 
+
     <ion-content>
+
+
       <ion-list>
         <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
           {{p.title}}
@@ -32,17 +35,13 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   pages: any[] = [
-    { title: 'Tutorial', component: 'TutorialPage' },
-    { title: 'Welcome', component: 'WelcomePage' },
-    { title: 'Tabs', component: 'TabsPage' },
-    { title: 'Cards', component: 'CardsPage' },
-    { title: 'Content', component: 'ContentPage' },
-    { title: 'Login', component: 'LoginPage' },
-    { title: 'Signup', component: 'SignupPage' },
-    { title: 'Master Detail', component: 'ListMasterPage' },
-    { title: 'Menu', component: 'MenuPage' },
-    { title: 'Settings', component: 'SettingsPage' },
-    { title: 'Search', component: 'SearchPage' }
+    { title: 'Profile', component: 'TutorialPage' },
+    { title: 'My Jobs', component: 'WelcomePage' },
+    { title: 'My Business', component: 'TabsPage' },
+    { title: 'Add Job', component: 'CardsPage' },
+    { title: 'Settings', component: 'ContentPage' },
+    { title: 'Logout', component: 'LoginPage' },
+    { title: 'Cards', component: 'CardsPage'}
   ]
 
   constructor(private translate: TranslateService, platform: Platform, settings: Settings, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {
