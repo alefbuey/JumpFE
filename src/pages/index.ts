@@ -5,8 +5,11 @@ export const FirstRunPage = 'WelcomePage';
 // Change this if not using tabs
 export const MainPage = 'TabsPage';
 
+//JOBS
+export const JobCreatePage = 'JobCreatePage'
+
 // The initial root pages for our tabs (remove if not using tabs)
-export const Tab1Root = 'NotificationPage';
-export const Tab2Root = 'ListMasterPage';
+export const Tab1Root = 'ListMasterPage';
+export const Tab2Root = 'NotificationPage';
 export const Tab3Root = 'FavoritesPage';
 export const Tab4Root = 'ChatPage';

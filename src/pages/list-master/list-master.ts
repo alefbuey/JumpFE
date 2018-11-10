@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, ModalController, NavController } from 'ionic-angular';
 import { Job } from '../../models/job';
 import { Jobs } from '../../providers';
+import { JobCreatePage } from '..';
 
 @IonicPage()
 @Component({
@@ -13,7 +14,7 @@ export class ListMasterPage {
 
   constructor(public navCtrl: NavController, public jobs: Jobs, public modalCtrl: ModalController){
     //this.currentJobs = this.jobs.query()
-    this.jobs.query().subscribe(res => this.currentJobs = res);
+    this.jobs.getFeed().subscribe(res => this.currentJobs = res);
   }
 
   /**
@@ -27,7 +28,7 @@ export class ListMasterPage {
    * modal and then adds the new job to our data source if the user created one.
    */
   addJob() {
-    let addModal = this.modalCtrl.create('JobCreatePage');
+    let addModal = this.modalCtrl.create(JobCreatePage);
     addModal.onDidDismiss(job => {
       if (job) {
         this.jobs.add(job);
