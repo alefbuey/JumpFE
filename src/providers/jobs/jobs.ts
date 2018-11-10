@@ -23,7 +23,7 @@ export class Jobs {
   constructor( public api: Api, public user: User) {}
   
 
-  query(params?: any) : Observable<Jobs> {
+  getFeed(params?: any) : Observable<Jobs> {
     return this.api.get('feed/true/'+ this.user._user).map(res => (res as any) as Jobs);
   }
 

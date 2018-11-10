@@ -24,7 +24,7 @@ export class SearchPage {
       this.currentJobs = [];
       return;
     }
-    this.currentJobs = this.jobs.query({
+    this.currentJobs = this.jobs.getFeed({
       name: val
     });
   }

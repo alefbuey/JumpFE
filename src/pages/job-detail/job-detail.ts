@@ -17,11 +17,11 @@ export class JobDetailPage {
   constructor(public navCtrl: NavController, public api: Api , navParams: NavParams) {
     var idJob = navParams.get('idJob');
     var jobMode = navParams.get('jobMode');
-    this.query(idJob, jobMode).subscribe(res => this.jobDetail= (res as any) as JobDetail);
+    this.selectJob(idJob, jobMode).subscribe(res => this.jobDetail= (res as any) as JobDetail);
     //this.jobProv.selectJob(idJob, jobMode).subscribe(res => this.jobDetail = res || this.jobProv.defaultJobDetail)  ;
   }
 
-  query(idJob, jobMode){
+  selectJob(idJob, jobMode){
     return this.api.get('selectJob/'+idJob+'/'+jobMode)
   }
 }
