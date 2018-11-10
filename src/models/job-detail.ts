@@ -9,9 +9,7 @@ export class JobDetail {
     }
   
   }
-  
-  
-  
+
   export interface JobDetail{
       id: number,
       idemployer: number,
