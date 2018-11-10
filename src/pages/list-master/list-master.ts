@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, ModalController, NavController } from 'ionic-angular';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Job } from '../../models/job';
 import { Jobs } from '../../providers';
 
@@ -12,21 +11,7 @@ import { Jobs } from '../../providers';
 export class ListMasterPage {
   currentJobs : Jobs;
 
-  safeUrl:  SafeResourceUrl;
-
-  private urlValue: string;
-  
-  get url(): string {
-    return this.urlValue
-  };
-  set url(value: string) {
-    this.urlValue = value;
-    this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(value);
-  }
-
-
-
-  constructor(public navCtrl: NavController, public jobs: Jobs, public modalCtrl: ModalController, private sanitizer: DomSanitizer){
+  constructor(public navCtrl: NavController, public jobs: Jobs, public modalCtrl: ModalController){
     //this.currentJobs = this.jobs.query()
     this.jobs.query().subscribe(res => this.currentJobs = res);
   }
@@ -63,7 +48,8 @@ export class ListMasterPage {
    */
   openJob(job: Job) {
     this.navCtrl.push('JobDetailPage', {
-      job: job
+      idJob: job.idjob,
+      jobMode: job.jobmode
     });
   }
 
