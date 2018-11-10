@@ -41,4 +41,17 @@ export class CardsPage {
     ];
 
   }
+
+
+
+
+
+// openJob(job: Job) {
+//     this.navCtrl.push('JobDetailPage', {
+//       idJob: job.idjob,
+//       jobMode: job.jobmode
+//     });
+//   }
+
+  
 }
