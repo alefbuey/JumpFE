@@ -15,3 +15,8 @@ export const Tab3Root = 'FavoritesPage';
 export const Tab4Root = 'ChatPage';
 
 export const ProfilePage = 'ProfilePage';
+
+//MY JOBS
+export const MyjobsPage = 'MyjobsPage'; //It is a tab page
+export const ApplyingJobsPage = 'ApplyingJobsPage';
+export const AcceptedJobsPage = 'AcceptedJobsPage';
