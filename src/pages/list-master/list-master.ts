@@ -54,7 +54,7 @@ export class ListMasterPage {
     });
   }
 
-<<<<<<< HEAD
+
 
   openProfile(){
     this.navCtrl.push('ProfilePage');
@@ -65,10 +65,11 @@ export class ListMasterPage {
   showImage(job: Job){
     //return 'blob:http://localhost/home/ferz/Proyectos/JumpBE/' + job.imageEmployer
     return '../../assets/' + job.imageEmployer
-=======
+  }
+
   goToProfile(idEmployer: any){
     this.navCtrl.push('ProfilePage')
->>>>>>> c255bdbdca4e9bcb7e8b0788685d22eb36785103
+
   }
 
 }
