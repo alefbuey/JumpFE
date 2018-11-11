@@ -2,7 +2,9 @@
 
   <ion-navbar>
     <ion-title>{{ 'LIST_MASTER_TITLE' | translate }}</ion-title>
-
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-buttons end>
       <button ion-button icon-only (click)="addJob()">
         <ion-icon name="add"></ion-icon>
@@ -42,7 +44,7 @@
 
   <ion-item>
     <ion-avatar item-start>
-      <img [src]="showImage(job)">
+      <img src="{{job.imageEmployer}}">
     </ion-avatar>
     <h2>{{job.nameEmploye}}</h2>
   </ion-item>

@@ -24,7 +24,7 @@ export class Jobs {
   
 
   getFeed(params?: any) : Observable<Jobs> {
-    return this.api.get('feed/true/'+ this.user._user).map(res => (res as any) as Jobs);
+    return this.api.get('feed/'+ this.user._user).map(res => (res as any) as Jobs);
   }
 
   add(job: Job) {
