@@ -27,6 +27,10 @@ export class Jobs {
     return this.api.get('feed/'+ this.user._user).map(res => (res as any) as Jobs);
   }
 
+  getAcceptedJobs(params?: any) : Observable<Jobs> {
+    return this.api.get('getAcceptedJobs/'+ this.user._user).map(res => (res as any) as Jobs);
+  }
+
   create(jobInfo: any) {
     let seq = this.api.post('createJob', jobInfo).share();
 
