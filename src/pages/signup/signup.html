@@ -44,9 +44,9 @@
       <ion-item>
         <ion-label fixed>{{ 'GENDER' | translate }}</ion-label>
         <ion-select [(ngModel)]="account.gender" name="gender">
-          <ion-option value="N" checked="true">Prefer not to say</ion-option>
-          <ion-option value="F" >Female</ion-option>
-          <ion-option value="M">Male</ion-option>
+          <ion-option value="N" checked="true">{{ 'NOT_TO_SAY' | translate }}</ion-option>
+          <ion-option value="F" >{{ 'FEMALE' | translate }}</ion-option>
+          <ion-option value="M">{{ 'MALE' | translate }}</ion-option>
          
         </ion-select>
       </ion-item>

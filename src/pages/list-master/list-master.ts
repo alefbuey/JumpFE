@@ -27,11 +27,11 @@ export class ListMasterPage {
    * Prompt the user to add a new job. This shows our JobCreatePage in a
    * modal and then adds the new job to our data source if the user created one.
    */
-  addJob() {
+  createJob() {
     let addModal = this.modalCtrl.create(JobCreatePage);
     addModal.onDidDismiss(job => {
       if (job) {
-        this.jobs.add(job);
+        this.jobs.create(job);
       }
     })
     addModal.present();
@@ -48,14 +48,14 @@ export class ListMasterPage {
    * Navigate to the detail page for this job.
    */
   openJob(job: Job) {
-    this.navCtrl.push('JobDetailPage', {
+    this.navCtrl.setRoot('JobDetailPage', {
       idJob: job.idjob,
       jobMode: job.jobmode
     });
   }
 
-  showImage(job: Job){
-    //return 'blob:http://localhost/home/ferz/Proyectos/JumpBE/' + job.imageEmployer
-    return '../../assets/' + job.imageEmployer
+  goToProfile(idEmployer: any){
+    this.navCtrl.push('ProfilePage')
   }
+
 }
