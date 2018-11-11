@@ -1,3 +1,5 @@
+import { DeprecatedI18NPipesModule } from "@angular/common";
+
 /**
  * A generic model that our Master-Detail pages list, create, and delete.
  *
@@ -29,5 +31,6 @@ export interface Job{
     title: string,
     jobcost: number,
     dateposted: string,
+    dateend: string,
     numbervacancies: number
 }
