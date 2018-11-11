@@ -49,7 +49,12 @@ export function provideSettings(storage: Storage) {
       }
     }),
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+
+    // IonicModule.forRoot(MyApp, {
+    //   tabsHideOnSubPages: true,
+    // })
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [

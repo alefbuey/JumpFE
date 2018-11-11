@@ -17,7 +17,7 @@ export class SignupPage {
     name: 'Your Name',
     lastname: 'Your lastname',
     birthdate: '2018-01-01',
-    gender: 'M',
+    gender: 'F',
     email: 'test@example.com',
     password: 'test'  
   };
@@ -36,7 +36,6 @@ export class SignupPage {
   }
 
   doSignup() {
-    console.log(this.account)
     // Attempt to login in through our User service
     this.user.signup(this.account).subscribe((resp) => {
       
@@ -49,7 +48,7 @@ export class SignupPage {
       let toast = this.toastCtrl.create({
         message: this.signupErrorString,
         duration: 3000,
-        position: 'top'
+        position: 'bottom'
       });
       toast.present();
     });
