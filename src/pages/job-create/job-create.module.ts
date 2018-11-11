@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { IonicPageModule } from 'ionic-angular';
 import { JobCreatePage } from './job-create';
 
@@ -8,6 +9,7 @@ import { JobCreatePage } from './job-create';
   ],
   imports: [
     IonicPageModule.forChild(JobCreatePage),
+    TranslateModule.forChild()
   ],
 })
 export class JobCreatePageModule {}

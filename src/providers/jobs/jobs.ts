@@ -27,9 +27,25 @@ export class Jobs {
     return this.api.get('feed/'+ this.user._user).map(res => (res as any) as Jobs);
   }
 
-  add(job: Job) {
+  create(jobInfo: any) {
+    let seq = this.api.post('createJob', jobInfo).share();
+
+    seq.subscribe((res: any) => {
+      // If the API returned a successful response, mark the user as logged in
+      if (res.status == 'success') {
+        //Do nothing
+      }
+    }, err => {
+      console.error('ERROR', err);
+    });
+
+    return seq;
   }
 
+  select(idJob, jobMode){
+    return this.api.get('selectJob/'+idJob+'/'+jobMode)
+  }
+    
   delete(job: Job) {
   }
 
