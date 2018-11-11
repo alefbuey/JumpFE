@@ -2,7 +2,9 @@
 
   <ion-navbar>
     <ion-title>{{ 'LIST_MASTER_TITLE' | translate }}</ion-title>
-
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-buttons end>
       <button ion-button icon-only (click)="createJob()">
         <ion-icon name="add"></ion-icon>
@@ -15,7 +17,6 @@
 <ion-content>
 
 <ion-card *ngFor="let job of currentJobs">
-
   <button ion-item (click)="openJob(job)">
     
     <ion-item>

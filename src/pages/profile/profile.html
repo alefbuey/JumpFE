@@ -7,12 +7,55 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>profile</ion-title>
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Profile</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
-<ion-content padding>
+<ion-content *ngIf="profile">
+    <ion-card class="profile-top">
+        <ion-row>
+          <ion-col>
+            <div class="profile-photo">
+              <button ion-item (click)='updatePhoto()'>
+                  <img src="{{profile.image}}">
+              </button>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+      <ion-list class="profile-detail">
+          <ion-row>      
+            <ion-col no-padding>       
+              <ion-item>
+                    <h4>{{'NAME'| translate}}</h4>
+                    <p>{{profile.name}} {{profile.lastname}}</p>
+              </ion-item>
+              <ion-item>
+                  <h4>{{'ID'| translate}}</h4>
+                  <p>{{profile.nationalidentifier}}</p>
+              </ion-item>
+            </ion-col>  
+          </ion-row>
+        <ion-row>
+          <ion-col no-padding>
+            <ion-item>
+              <h4>About Me</h4>
+              <p>{{profile.about}}</p>
+            </ion-item>
+          </ion-col>
+        </ion-row>    
+        <ion-item icon-left>
+          <h4><ion-icon name="mail"></ion-icon>Email Address</h4>
+          <p>{{profile.email}}</p>
+        </ion-item>
+        <ion-item icon-left>
+            <h4><ion-icon name="call"></ion-icon>Cellphone</h4>
+            <p>{{profile.cellphone}}</p>
+        </ion-item>
+      </ion-list>
 
 </ion-content>
