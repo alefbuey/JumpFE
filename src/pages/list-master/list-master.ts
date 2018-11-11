@@ -53,6 +53,13 @@ export class ListMasterPage {
     });
   }
 
+
+  openProfile(){
+    this.navCtrl.push('ProfilePage');
+  }
+
+
+
   showImage(job: Job){
     //return 'blob:http://localhost/home/ferz/Proyectos/JumpBE/' + job.imageEmployer
     return '../../assets/' + job.imageEmployer

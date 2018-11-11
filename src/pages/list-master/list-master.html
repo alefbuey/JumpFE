@@ -40,21 +40,26 @@
 
 <ion-card *ngFor="let job of currentJobs">
 
+
   <ion-item>
-    <ion-avatar item-start>
-      <img [src]="showImage(job)">
+    
+    <ion-avatar item-start >
+      <img [src]="showImage(job)" ng-click="openProfile()">
     </ion-avatar>
+    
     <h2>{{job.nameEmploye}}</h2>
   </ion-item>
 
   <img [src]="job.image">
 
+  <button ion-item (click)="openJob(job)">
   <ion-card-content>
     <h2>{{job.title}}</h2>
         <p >Salary: {{job.jobcost}}</p>
         <p>Vacancies: {{job.numbervacancies}}</p>
         <p>Posted: {{job.dateposted}}</p>
     </ion-card-content>
+  </button>
 
 
     <ion-row>
