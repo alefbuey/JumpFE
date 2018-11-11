@@ -7,13 +7,18 @@
   "USERNAME": "Username",
   "PASSWORD": "Password",
   "GENDER": "Gender",
+  "NOT_TO_SAY": "Prefer not to say",
+  "FEMALE": "Female",
+  "MALE": "Male",
   "BIRTHDATE": "Brithdate",
   "LOGIN": "Sign in",
   "SIGNUP": "Sign up",
 
   "TAB1_TITLE": "Jobs",
-  "TAB2_TITLE": "Search",
-  "TAB3_TITLE": "Settings",
+  "TAB2_TITLE": "Notifications",
+  "TAB3_TITLE": "Favorites",
+  "TAB4_TITLE": "Chat",
+
 
   "MAP_TITLE": "Map",
 
@@ -55,7 +60,21 @@
   "LIST_MASTER_TITLE": "Jobs",
 
   "JOB_CREATE_TITLE": "New Job",
+  "TITLE": "Title",
+  "DESCRIPTION": "Description",
+  "MODE": "Mode",
+  "PHYSICAL": "Physical",
+  "VIRTUAL": "Virtual",
+  "JOB_COST": "Cost", 
+  "NUMBER_VACANCIES": "Vacancies", 
+  "START_JOB": "Start date", 
+  "END_JOB": "End date",
+  "END_JOB_POST": "Post until", 
+  "CREATE_JOB_BUTTON": "Create Job",
   "JOB_CREATE_CHOOSE_IMAGE": "Add Image",
+  "CREATE_JOB_SUCCESS": "Job created successfully",
+  "CREATE_JOB_ERROR": "Sorry, your job could not be created. Please try again.",
+
 
   "JOB_NAME_PLACEHOLDER": "Name",
   "JOB_ABOUT_PLACEHOLDER": "About",

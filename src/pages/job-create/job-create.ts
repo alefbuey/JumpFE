@@ -1,83 +1,77 @@
-import { Component, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Camera } from '@ionic-native/camera';
-import { IonicPage, NavController, ViewController } from 'ionic-angular';
+import { Component } from '@angular/core';
+import { IonicPage, NavController, ToastController} from 'ionic-angular';
+import { TranslateService } from '@ngx-translate/core';
+import { Jobs, User } from '../../providers'
+import { MainPage } from '../'
 
 @IonicPage()
 @Component({
   selector: 'page-job-create',
-  templateUrl: 'job-create.html'
+  templateUrl: 'job-create.html',
 })
 export class JobCreatePage {
-  @ViewChild('fileInput') fileInput;
+  jobInfo: { idemployer: number, mode: number, title: string, description: string, jobcost:	number, jobcostcovered:	number, datestart: string, dateend:	string, datepostend: string, numbervacancies:	2} =   
+  {
+    idemployer    :	0,	
+    mode          :	1,		
+    title         :	"Job desde Postam",	
+    description   :	"Prueba desde Postman",	
+    jobcost       :	10000,	
+    jobcostcovered:	5000,
+    datestart     :	"2018-12-12",	
+    dateend       :	"2018-12-12",	
+    datepostend   :   "2018-12-12",	
+    numbervacancies :	2 
+  };
 
-  isReadyToSave: boolean;
 
-  job: any;
+  private createJobErrorString: string;
+  private createJobSuccessString: string;
 
-  form: FormGroup;
+  constructor(
+    public user: User,
+    public navCtrl: NavController,
+    public job: Jobs,
+    public toastCtrl: ToastController,
+    public translateService: TranslateService) {
 
-  constructor(public navCtrl: NavController, public viewCtrl: ViewController, formBuilder: FormBuilder, public camera: Camera) {
-    this.form = formBuilder.group({
-      profilePic: [''],
-      name: ['', Validators.required],
-      about: ['']
-    });
+    this.translateService.get('CREATE_JOB_ERROR').subscribe((value) => {
+      this.createJobErrorString = value;
+    })
 
-    // Watch the form for changes, and
-    this.form.valueChanges.subscribe((v) => {
-      this.isReadyToSave = this.form.valid;
-    });
+    this.translateService.get('CREATE_JOB_SUCCESS').subscribe((value) => {
+      this.createJobSuccessString = value;
+    })
+
+    this.jobInfo.idemployer = user._user
   }
 
   ionViewDidLoad() {
-
+    console.log('ionViewDidLoad JobCreatePage');
   }
 
-  getPicture() {
-    if (Camera['installed']()) {
-      this.camera.getPicture({
-        destinationType: this.camera.DestinationType.DATA_URL,
-        targetWidth: 96,
-        targetHeight: 96
-      }).then((data) => {
-        this.form.patchValue({ 'profilePic': 'data:image/jpg;base64,' + data });
-      }, (err) => {
-        alert('Unable to take photo');
-      })
-    } else {
-      this.fileInput.nativeElement.click();
-    }
-  }
+  createJob() {
+    // Attempt to login in through our User service
+    this.job.create(this.jobInfo).subscribe((resp) => {
+      let toast = this.toastCtrl.create({
+        message: this.createJobSuccessString,
+        duration: 3000,
+        position: 'bottom'
+      });
+      toast.present();
+      this.navCtrl.push(MainPage);
+    }, (err) => {
 
-  processWebImage(event) {
-    let reader = new FileReader();
-    reader.onload = (readerEvent) => {
+      //this.navCtrl.push(MainPage);
 
-      let imageData = (readerEvent.target as any).result;
-      this.form.patchValue({ 'profilePic': imageData });
-    };
-
-    reader.readAsDataURL(event.target.files[0]);
-  }
-
-  getProfileImageStyle() {
-    return 'url(' + this.form.controls['profilePic'].value + ')'
-  }
-
-  /**
-   * The user cancelled, so we dismiss without sending data back.
-   */
-  cancel() {
-    this.viewCtrl.dismiss();
-  }
-
-  /**
-   * The user is done and wants to create the job, so return it
-   * back to the presenter.
-   */
-  done() {
-    if (!this.form.valid) { return; }
-    this.viewCtrl.dismiss(this.form.value);
+      // Unable to sign up
+      let toast = this.toastCtrl.create({
+        message: this.createJobErrorString,
+        duration: 3000,
+        position: 'bottom'
+      });
+      toast.present();
+    });
   }
 }
+

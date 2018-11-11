@@ -2,9 +2,11 @@
 
   <ion-navbar>
     <ion-title>{{ 'LIST_MASTER_TITLE' | translate }}</ion-title>
-
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-buttons end>
-      <button ion-button icon-only (click)="addJob()">
+      <button ion-button icon-only (click)="createJob()">
         <ion-icon name="add"></ion-icon>
       </button>
     </ion-buttons>
@@ -14,31 +16,8 @@
 
 <ion-content>
 
-  <!--<ion-list>
-    <ion-item-sliding *ngFor="let job of currentJobs">
-      <button ion-item (click)="openJob(job)">
-        <ion-row align-items-center>
-            <ion-avatar item-start>
-                <img [src]="showImage(job)"><img>
-            </ion-avatar>
-            <h2>{{job.nameEmploye}}</h2>
-        </ion-row>
-        <h2>{{job.title}}</h2>
-        <p >Salary: {{job.jobcost}}</p>
-        <p>Vacancies: {{job.numbervacancies}}</p>
-        <p>Posted: {{job.dateposted}}</p>
-      </button>
-
-      <ion-item-options>
-        <button ion-button color="danger" (click)="deleteJob(job)">
-          {{ 'DELETE_BUTTON' | translate }}
-        </button>
-      </ion-item-options>
-    </ion-item-sliding>
-  </ion-list>-->
-
-
 <ion-card *ngFor="let job of currentJobs">
+<<<<<<< HEAD
 
 
   <ion-item>
@@ -81,6 +60,46 @@
         </ion-note>
       </ion-col>
     </ion-row>
+=======
+  <button ion-item (click)="openJob(job)">
+    
+    <ion-item>
+        <ion-avatar item-start>
+            <img src="{{job.imageEmployer}}">
+        </ion-avatar>
+      <h2>{{job.nameEmploye}}</h2>
+    </ion-item>   
+    <!-- <img [src]="job.image"> -->
+
+    <ion-card-content>
+      <h2>{{job.title}}</h2>
+          <p >Salary: {{job.jobcost}}</p>
+          <p>Vacancies: {{job.numbervacancies}}</p>
+          <p>Posted: {{job.dateposted}}</p>
+      </ion-card-content>
+
+
+      <ion-row>
+        <ion-col>
+          <button ion-button color="primary" clear small icon-start>
+              <ion-icon name='thumbs-up'></ion-icon>
+              12 Likes
+            </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button color="primary" clear small icon-start>
+              <ion-icon name='text'></ion-icon>
+              4 Comments
+            </button>
+        </ion-col>
+        <ion-col center text-center>
+          <ion-note>
+            11h ago
+          </ion-note>
+        </ion-col>
+      </ion-row>
+    </button>
+>>>>>>> c255bdbdca4e9bcb7e8b0788685d22eb36785103
   </ion-card>
 
 

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, ModalController, NavController } from 'ionic-angular';
 import { Job } from '../../models/job';
 import { Jobs } from '../../providers';
+import { JobCreatePage } from '..';
 
 @IonicPage()
 @Component({
@@ -13,7 +14,7 @@ export class ListMasterPage {
 
   constructor(public navCtrl: NavController, public jobs: Jobs, public modalCtrl: ModalController){
     //this.currentJobs = this.jobs.query()
-    this.jobs.query().subscribe(res => this.currentJobs = res);
+    this.jobs.getFeed().subscribe(res => this.currentJobs = res);
   }
 
   /**
@@ -26,11 +27,11 @@ export class ListMasterPage {
    * Prompt the user to add a new job. This shows our JobCreatePage in a
    * modal and then adds the new job to our data source if the user created one.
    */
-  addJob() {
-    let addModal = this.modalCtrl.create('JobCreatePage');
+  createJob() {
+    let addModal = this.modalCtrl.create(JobCreatePage);
     addModal.onDidDismiss(job => {
       if (job) {
-        this.jobs.add(job);
+        this.jobs.create(job);
       }
     })
     addModal.present();
@@ -47,12 +48,13 @@ export class ListMasterPage {
    * Navigate to the detail page for this job.
    */
   openJob(job: Job) {
-    this.navCtrl.push('JobDetailPage', {
+    this.navCtrl.setRoot('JobDetailPage', {
       idJob: job.idjob,
       jobMode: job.jobmode
     });
   }
 
+<<<<<<< HEAD
 
   openProfile(){
     this.navCtrl.push('ProfilePage');
@@ -63,5 +65,10 @@ export class ListMasterPage {
   showImage(job: Job){
     //return 'blob:http://localhost/home/ferz/Proyectos/JumpBE/' + job.imageEmployer
     return '../../assets/' + job.imageEmployer
+=======
+  goToProfile(idEmployer: any){
+    this.navCtrl.push('ProfilePage')
+>>>>>>> c255bdbdca4e9bcb7e8b0788685d22eb36785103
   }
+
 }

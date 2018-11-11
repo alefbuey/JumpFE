@@ -2,46 +2,63 @@
 
   <ion-navbar>
     <ion-title>{{ 'JOB_CREATE_TITLE' | translate }}</ion-title>
-    <ion-buttons start>
-      <button ion-button (click)="cancel()">
-        <span color="primary" showWhen="ios">
-          {{ 'CANCEL_BUTTON' | translate }}
-        </span>
-        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
-      </button>
-    </ion-buttons>
-    <ion-buttons end>
-      <button ion-button (click)="done()" [disabled]="!isReadyToSave" strong>
-        <span color="primary" showWhen="ios">
-          {{ 'DONE_BUTTON' | translate }}
-        </span>
-        <ion-icon name="md-checkmark" showWhen="core,android,windows"></ion-icon>
-      </button>
-    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content>
-  <form *ngIf="form" [formGroup]="form" (ngSubmit)="createJob()">
-    <input type="file" #fileInput style="visibility: hidden; height: 0px" name="files[]" (change)="processWebImage($event)" />
-    <div class="profile-image-wrapper" (click)="getPicture()">
-      <div class="profile-image-placeholder" *ngIf="!this.form.controls.profilePic.value">
-        <ion-icon name="add"></ion-icon>
-        <div>
-          {{ 'JOB_CREATE_CHOOSE_IMAGE' | translate }}
-        </div>
-      </div>
-      <div class="profile-image" [style.backgroundImage]="getProfileImageStyle()" *ngIf="this.form.controls.profilePic.value"></div>
-    </div>
+  <form (submit)="createJob()">
     <ion-list>
-      <ion-job>
-        <ion-input type="text" placeholder="{{ 'JOB_NAME_PLACEHOLDER' | translate }}" formControlName="name"></ion-input>
-      </ion-job>
-      <ion-job>
-        <ion-input type="text" placeholder="{{ 'JOB_ABOUT_PLACEHOLDER' | translate }}" formControlName="about"></ion-input>
-      </ion-job>
+
+      <ion-item>
+        <ion-label fixed>{{ 'TITLE' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="jobInfo.title" name="title"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>{{ 'DESCRIPTION' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="jobInfo.description" name="description"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>{{ 'MODE' | translate }}</ion-label>
+        <ion-select [(ngModel)]="jobInfo.mode" name="mode">
+          <ion-option value=1 checked="true">{{ 'PHYSICAL' | translate }}</ion-option>
+          <ion-option value=2 >{{ 'VIRTUAL' | translate }}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>{{ 'JOB_COST' | translate }}</ion-label>
+        <ion-input type="number" [(ngModel)]="jobInfo.jobcost" name="jobcost"></ion-input>
+      </ion-item>
+         
+      <ion-item>
+        <ion-label fixed>{{ 'NUMBER_VACANCIES' | translate }}</ion-label>
+        <ion-input type="number" [(ngModel)]="jobInfo.numbervacancies" name="numbervacancies"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>{{ 'START_JOB' | translate }} </ion-label>
+        <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="jobInfo.datestart" name = "datestart" pickerFormat="DDDD MMMM YYYY"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>{{ 'END_JOB' | translate }} </ion-label>
+        <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="jobInfo.dateend" name = "dateend" pickerFormat="DDDD MMMM YYYY"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>{{ 'END_JOB_POST' | translate }} </ion-label>
+        <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="jobInfo.datepostend" name = "datepostend" pickerFormat="DDDD MMMM YYYY"></ion-datetime>
+      </ion-item>
+      
+
+      <div padding>
+        <button ion-button color="primary" block>{{ 'CREATE_JOB_BUTTON' | translate }}</button>
+      </div>
+
     </ion-list>
   </form>
 </ion-content>

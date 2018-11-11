@@ -35,7 +35,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   pages: any[] = [
-    { title: 'Profile', component: 'TutorialPage' },
+    { title: 'Profile', component: 'ProfilePage' },
     { title: 'My Jobs', component: 'WelcomePage' },
     { title: 'My Business', component: 'TabsPage' },
     { title: 'Add Job', component: 'CardsPage' },

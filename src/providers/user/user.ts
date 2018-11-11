@@ -83,4 +83,10 @@ export class User {
   _loggedIn(resp) {
     this._user = resp.user.id;
   }
+
+
+  selectProfile(idUser){
+    return this.api.get('profile/'+idUser);
+  }
+
 }

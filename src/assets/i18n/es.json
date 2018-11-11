@@ -4,13 +4,18 @@
   "PASSWORD": "Contraseña",
   "EMAIL": "Email",
   "GENDER": "Género",
+  "NOT_TO_SAY": "Prefiero no decirlo",
+  "FEMALE": "Femenino",
+  "MALE": "Masculino",
   "BIRTHDATE": "Fecha de nacimiento",
   "LOGIN": "Iniciar sesión",
   "SIGNUP": "Registrarse",
 
   "TAB1_TITLE": "Trabajos",
-  "TAB2_TITLE": "Buscar",
-  "TAB3_TITLE": "Ajustes",
+  "TAB2_TITLE": "Notificaciones",
+  "TAB3_TITLE": "Favoritos",
+  "TAB4_TITLE": "Chat",
+
 
   "MAP_TITLE": "Mapa",
 
@@ -43,6 +48,21 @@
   "LIST_MASTER_TITLE": "Trabajos",
 
   "JOB_CREATE_TITLE": "Nuevo Trabajo",
+  "TITLE": "Título",
+  "DESCRIPTION": "Descripción",
+  "MODE": "Modo",
+  "PHYSICAL": "Físico",
+  "VIRTUAL": "Virtual",
+  "JOB_COST": "Costo", 
+  "NUMBER_VACANCIES": "Vacantes", 
+  "START_JOB": "Fecha de inicio", 
+  "END_JOB": "Fecha de fin",
+  "END_JOB_POST": "Publicar hasta", 
+  "CREATE_JOB_BUTTON": "Crear trabajo",
+  "CREATE_JOB_SUCCESS": "Trabajo creado exitosamente",
+  "CREATE_JOB_ERROR": "Lo sentimos, su trabajo no puedo ser creado. Por favor, intente nuevamente.",
+
+
   "JOB_CREATE_CHOOSE_IMAGE": "Añadir Imagen",
 
   "CARDS_TITLE": "Social",
