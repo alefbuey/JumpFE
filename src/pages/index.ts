@@ -14,4 +14,10 @@ export const Tab2Root = 'ListMasterPage';
 export const Tab3Root = 'FavoritesPage';
 export const Tab4Root = 'ChatPage';
 
+
+export const Myjobs = 'TabsJobPage';
+export const CurrentJob = 'CurrentJobPage';
+export const ApplyingJob = 'ApplyingJobPage';
+export const HistoryJob = 'HistoryJobPage';
+
 export const ProfilePage = 'ProfilePage';

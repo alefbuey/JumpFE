@@ -72,4 +72,12 @@ export class ListMasterPage {
 
   }
 
+  goToOtherProfile(){
+    this.navCtrl.push('ProfilePage')
+
+
+  }
+
+  
+
 }
