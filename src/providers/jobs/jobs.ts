@@ -6,7 +6,7 @@ import { User } from '../user/user'
 
 @Injectable()
 export class Jobs {
-//  jobs : Observable<Job>;
+  //jobs : Observable<Job>;
   jobs: Job[] = [];
   defaultJob: Job = {
     idemployer: 0,

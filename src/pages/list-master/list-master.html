@@ -15,9 +15,9 @@
 
 </ion-header>
 
-<ion-content>
+<ion-content class="pagebackground">
 
-<ion-card *ngFor="let job of currentJobs">
+<ion-card *ngFor="let job of currentJobs" class="cardavatar">
 
 
   
@@ -28,7 +28,7 @@
         </ion-avatar>
       <h2>{{job.nameEmploye}}</h2>
     </ion-item>   
-    <!-- <img [src]="job.image"> -->
+    <img src = "../assets/img/defaultjob.png"> <!-- <img [src]="job.image"> -->
     <button ion-item (click)="openJob(job)">
     <ion-card-content>
       <h2>{{job.title}}</h2>
@@ -41,19 +41,20 @@
 
 
       <ion-row>
-        <ion-col center text-center>
-          <button ion-button color="primary" clear small icon-start (click)=addtoFavorites()>
+        <ion-col>
+          <button ion-button class="favorites" clear small icon-start (click)=addtoFavorites()>
               <ion-icon name='heart'></ion-icon> Favorites
+
             </button>
         </ion-col>
         <ion-col>
-          <button ion-button color="primary" clear small icon-start>
-              <ion-icon name='text'></ion-icon>
-              4 Comments
+          <button ion-button color="light" clear small icon-start>
+              <ion-icon name='share-alt'></ion-icon>
+              Share
             </button>
         </ion-col>
         <ion-col center text-center>
-          <ion-note>
+          <ion-note color="light">
             11h ago
           </ion-note>
         </ion-col>

@@ -1,2 +1,47 @@
 page-login {
+
+	
+	.background{
+	background-color: #DBDBDB;
+
+	}
+
+	.list{
+
+		margin: 25px;
+	}
+
+
+	.splashhead{
+	position: relative;
+	margin-top: 30px;
+	text-align: center;
+	z-index: 2;	
+	}
+	.splashlogin{
+
+	margin: auto;
+    background: url('../assets/img/appicon.png') repeat transparent;
+    background-size: 100%;
+    width: 170px;
+    height: 170px;
+
+}
+
+    .splash-intro {
+
+    
+    font-size: 20px;
+    max-width: 80%;
+    margin-bottom: 20px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 20px; 
+    color: #fff;
+
+	}
+	.login{
+
+		margin-top: 25px;
+	}
 }
