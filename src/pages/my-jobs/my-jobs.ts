@@ -6,8 +6,8 @@ import { TranslateService } from '@ngx-translate/core';
 
 @IonicPage()
 @Component({
-  selector: 'page-myjobs',
-  templateUrl: 'myjobs.html',
+  selector: 'page-my-jobs',
+  templateUrl: 'my-jobs.html',
 })
 export class MyJobsPage {
   tab1Root: any = ApplyingJobsPage;
@@ -24,7 +24,7 @@ export class MyJobsPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MyjobsPage');
+    console.log('ionViewDidLoad MyJobsPage');
   }
 
 }

@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Jobs } from '../../providers';
 
 
+
 @IonicPage()
 @Component({
   selector: 'page-applying-business',
@@ -12,11 +13,11 @@ export class ApplyingBusinessPage {
   applyingBusiness: Jobs;
 
   constructor(public navCtrl: NavController,public jobs: Jobs,  public navParams: NavParams) {
-    this.jobs.applingBusiness().subscribe(res => this.applyingBusiness = res);
+    //this.jobs.applyingBusiness().subscribe(res => this.applyingBusiness = res);
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AcceptedJobsPage');
+    console.log('ionViewDidLoad ApplyingBusinessPage');
   }
 
   // openAcceptedJob(job: JobFeed) {
