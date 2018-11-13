@@ -17,8 +17,8 @@ import { Settings } from '../providers';
 
 
     <ion-content>
-
-
+    <ion-avatar class="avatar" >
+    </ion-avatar>
       <ion-list>
         <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
           {{p.title}}

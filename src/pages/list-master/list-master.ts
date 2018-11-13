@@ -11,11 +11,13 @@ import { JobCreatePage } from '..';
 })
 export class ListMasterPage {
   currentJobs : Jobs;
+ 
 
   constructor(public navCtrl: NavController, public jobs: Jobs, public modalCtrl: ModalController){
     //this.currentJobs = this.jobs.query()
     this.jobs.getFeed().subscribe(res => this.currentJobs = res);
   }
+
 
   /**
    * The view loaded, let's query our jobs for the list
@@ -53,8 +55,30 @@ export class ListMasterPage {
     });
   }
 
+
+
+  openProfile(){
+    this.navCtrl.push('ProfilePage');
+  }
+
+
+
+  showImage(job: Job){
+    //return 'blob:http://localhost/home/ferz/Proyectos/JumpBE/' + job.imageEmployer
+    return '../../assets/' + job.imageEmployer
+  }
+
   goToProfile(idEmployer: any){
     this.navCtrl.push('ProfilePage')
+
   }
+
+  goToOtherProfile(){
+    this.navCtrl.push('ProfilePage')
+
+
+  }
+
+  
 
 }

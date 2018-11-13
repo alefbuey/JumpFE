@@ -1,7 +1,8 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{ 'LIST_MASTER_TITLE' | translate }}</ion-title>
+    <ion-title>
+    {{ 'LIST_MASTER_TITLE' | translate }}</ion-title>
     <button ion-button menuToggle>
         <ion-icon name="menu"></ion-icon>
     </button>
@@ -14,47 +15,53 @@
 
 </ion-header>
 
-<ion-content>
+<ion-content class="pagebackground">
 
-<ion-card *ngFor="let job of currentJobs">
-  <button ion-item (click)="openJob(job)">
+<ion-card *ngFor="let job of currentJobs" class="cardavatar">
+
+
+  
     
     <ion-item>
-        <ion-avatar item-start>
-            <img src="{{job.imageEmployer}}">
+        <ion-avatar item-start (click)="goToOtherProfile()">
+            <img src="{{job.imageEmployer}}" >
         </ion-avatar>
       <h2>{{job.nameEmploye}}</h2>
-    </ion-item>
-    
-    <img src = "assets/img/badu-live.png">
-    <!-- <img [src]="job.image"> -->
-
+    </ion-item>   
+    <img src = "../assets/img/defaultjob.png"> <!-- <img [src]="job.image"> -->
+    <button ion-item (click)="openJob(job)">
     <ion-card-content>
       <h2>{{job.title}}</h2>
           <p >Salary: {{job.jobcost}}</p>
           <p>Vacancies: {{job.numbervacancies}}</p>
           <p>Posted: {{job.dateposted}}</p>
       </ion-card-content>
+
+      </button>
+
+
       <ion-row>
-          <ion-col>
-            <button ion-button color="primary" clear small icon-start>
-                <ion-icon name='thumbs-up'></ion-icon>
-                12 Likes
-              </button>
-          </ion-col>
-          <ion-col>
-            <button ion-button color="primary" clear small icon-start>
-                <ion-icon name='text'></ion-icon>
-                4 Comments
-              </button>
-          </ion-col>
-          <ion-col center text-center>
-            <ion-note>
-              11h ago
-            </ion-note>
-          </ion-col>
-        </ion-row>
-    </button>
+        <ion-col>
+          <button ion-button class="favorites" clear small icon-start (click)=addtoFavorites()>
+              <ion-icon name='heart'></ion-icon> Favorites
+
+            </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button color="light" clear small icon-start>
+              <ion-icon name='share-alt'></ion-icon>
+              Share
+            </button>
+        </ion-col>
+        <ion-col center text-center>
+          <ion-note color="light">
+            11h ago
+          </ion-note>
+        </ion-col>
+      </ion-row>
+    
+
+
   </ion-card>
 
 

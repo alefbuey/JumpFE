@@ -1,15 +1,22 @@
-<ion-header>
+<ion-header >
 
-  <ion-navbar>
+  <ion-navbar color="secundary">
     <ion-title>{{ 'LOGIN_TITLE' | translate }}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content>
+<ion-content class="background">
+  <div class="splashhead">
+<div class="splashlogin"></div>
+
+<div class="splash-intro">Ingresa tus datos </div>
+</div>
+
+
   <form (submit)="doLogin()">
-    <ion-list>
+    <ion-list class="list">
 
       <ion-item>
         <ion-label fixed>{{ 'EMAIL' | translate }}</ion-label>
@@ -31,8 +38,8 @@
         <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>
       </ion-item>
 
-      <div padding>
-        <button ion-button color="primary" block>{{ 'LOGIN_BUTTON' | translate }}</button>
+      <div class="login">
+        <button ion-button round full color="secondary" >{{ 'LOGIN_BUTTON' | translate }}</button>
       </div>
 
     </ion-list>
