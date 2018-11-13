@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { Jobs } from '../../providers'
 
 @IonicPage()
 @Component({
@@ -9,13 +9,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ApplyingJobsPage {
 
-  
+  applyingJobs : Jobs;
 
   constructor(
     public navCtrl: NavController,
-    public navParams: NavParams){
+    public navParams: NavParams,
+    public jobs: Jobs){
   
-     
+      this.jobs.applyingJobs().subscribe(res => this.applyingJobs = res); 
   }
 
   ionViewDidLoad() {

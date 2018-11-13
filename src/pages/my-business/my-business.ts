@@ -1,17 +1,23 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ApplyingJobsPage, AcceptedJobsPage } from '../';
-import { TranslateService } from '@ngx-translate/core';
+import { ApplyingBusinessPage, AcceptedBusinessPage } from '..';
 
+
+/**
+ * Generated class for the MyBusinessPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
 
 @IonicPage()
 @Component({
-  selector: 'page-myjobs',
-  templateUrl: 'myjobs.html',
+  selector: 'page-my-business',
+  templateUrl: 'my-business.html',
 })
-export class MyjobsPage {
-  tab1Root: any = ApplyingJobsPage;
-  tab2Root: any = AcceptedJobsPage;
+export class MyBusinessPage {
+  tab1Root: any = ApplyingBusinessPage;
+  tab2Root: any = AcceptedBusinessPage;
 
   tab1Title = " ";
   tab2Title = " ";
@@ -24,7 +30,7 @@ export class MyjobsPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MyjobsPage');
+    console.log('ionViewDidLoad MyJobsPage');
   }
 
 }
