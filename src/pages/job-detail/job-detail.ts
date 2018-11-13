@@ -12,13 +12,28 @@ import { Jobs } from '../../providers'
 
 export class JobDetailPage {
   jobDetail: any;
+  employer = {
+    imageEmployer: "",
+    nameEmploye: ""
+  }
 
   //jobProv: JobDetailProv
  
   constructor(public navCtrl: NavController, public api: Api, public job: Jobs , navParams: NavParams) {
     var idJob = navParams.get('idJob');
     var jobMode = navParams.get('jobMode');
+    var imageEmployer = navParams.get('imageEmployer');
+    var nameEmploye = navParams.get('nameEmploye');
+
+    this.employer.imageEmployer = imageEmployer;
+    this.employer.nameEmploye = nameEmploye;
+    
     this.job.select(idJob, jobMode).subscribe(res => this.jobDetail= (res as any) as JobDetail);
+    
+  }
+
+  apply(){
+    
   }
 
 }

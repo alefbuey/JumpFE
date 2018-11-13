@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import { Job } from '../../models/job';
+import { JobFeed } from '../../models/job-feed';
 import { Jobs } from '../../providers';
 
 @IonicPage()
@@ -32,7 +32,7 @@ export class SearchPage {
   /**
    * Navigate to the detail page for this job.
    */
-  openJob(job: Job) {
+  openJob(job: JobFeed) {
     this.navCtrl.push('JobDetailPage', {
       job: job
     });
