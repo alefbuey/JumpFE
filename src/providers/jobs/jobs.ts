@@ -39,5 +39,18 @@ export class Jobs {
     return this.api.get('selectJob/'+idJob+'/'+jobMode)
   }
     
+  apply(jobApply){
+    let seq = this.api.post('applyingToJob', jobApply).share();
 
+    seq.subscribe((res: any) => {
+      // If the API returned a successful response, mark the user as logged in
+      if (res.status == 'success') {
+        //Do nothing
+      }
+    }, err => {
+      console.error('ERROR', err);
+    });
+
+    return seq;
+  }
 }

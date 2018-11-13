@@ -19,4 +19,5 @@ export const ProfilePage = 'ProfilePage';
 export const MyjobsPage = 'MyjobsPage'; //It is a tab page
 export const ApplyingJobsPage = 'ApplyingJobsPage';
 export const AcceptedJobsPage = 'AcceptedJobsPage';
+export const ApplyFormPage = 'ApplyFormPage'
 

@@ -48,7 +48,7 @@ export class ListMasterPage {
    */
   openJob(jobFeed: JobFeed) {
     this.navCtrl.setRoot('JobDetailPage', {
-      idJob: jobFeed.idjob,
+      idjob: jobFeed.idjob,
       jobMode: jobFeed.jobmode,
       imageEmployer: jobFeed.imageEmployer,
       nameEmploye: jobFeed.nameEmploye
@@ -63,7 +63,7 @@ export class ListMasterPage {
 
 
 
-  showImage(job: Job){
+  showImage(job){
     //return 'blob:http://localhost/home/ferz/Proyectos/JumpBE/' + job.imageEmployer
     return '../../assets/' + job.imageEmployer
   }
