@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, ModalController, NavController } from 'ionic-angular';
-import { Job } from '../../models/job';
+import { JobFeed } from '../../models/job-feed';
 import { Jobs } from '../../providers';
 import { JobCreatePage } from '..';
 
@@ -42,17 +42,16 @@ export class ListMasterPage {
   /**
    * Delete an job from the list of jobs.
    */
-  deleteJob(job) {
-    this.jobs.delete(job);
-  }
 
   /**
    * Navigate to the detail page for this job.
    */
-  openJob(job: Job) {
+  openJob(jobFeed: JobFeed) {
     this.navCtrl.setRoot('JobDetailPage', {
-      idJob: job.idjob,
-      jobMode: job.jobmode
+      idjob: jobFeed.idjob,
+      jobMode: jobFeed.jobmode,
+      imageEmployer: jobFeed.imageEmployer,
+      nameEmploye: jobFeed.nameEmploye
     });
   }
 
@@ -64,7 +63,7 @@ export class ListMasterPage {
 
 
 
-  showImage(job: Job){
+  showImage(job){
     //return 'blob:http://localhost/home/ferz/Proyectos/JumpBE/' + job.imageEmployer
     return '../../assets/' + job.imageEmployer
   }

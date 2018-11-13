@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Api } from '../../providers'
+import { Api, Jobs} from '../../providers'
 import { JobDetail } from '../../models/job-detail';
-import { Jobs } from '../../providers'
+import { ApplyFormPage } from '..';
 
 @IonicPage()
 @Component({
@@ -12,13 +12,29 @@ import { Jobs } from '../../providers'
 
 export class JobDetailPage {
   jobDetail: any;
+  employer = {
+    imageEmployer: "",
+    nameEmploye: ""
+  }
 
+  idjob : 0;
   //jobProv: JobDetailProv
  
   constructor(public navCtrl: NavController, public api: Api, public job: Jobs , navParams: NavParams) {
-    var idJob = navParams.get('idJob');
+    this.idjob = navParams.get('idjob');
     var jobMode = navParams.get('jobMode');
-    this.job.select(idJob, jobMode).subscribe(res => this.jobDetail= (res as any) as JobDetail);
+    var imageEmployer = navParams.get('imageEmployer');
+    var nameEmploye = navParams.get('nameEmploye');
+
+    this.employer.imageEmployer = imageEmployer;
+    this.employer.nameEmploye = nameEmploye;
+    
+    this.job.select(this.idjob, jobMode).subscribe(res => this.jobDetail= (res as any) as JobDetail);
+    
+  }
+
+  openApplyForm(){
+    this.navCtrl.push(ApplyFormPage, {idjob: this.idjob, jobTitle: this.jobDetail.title, salary: this.jobDetail.jobcost})
   }
 
 }

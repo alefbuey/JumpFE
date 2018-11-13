@@ -10,11 +10,26 @@
 
 
 <ion-content *ngIf="jobDetail">
-  <div class="item-profile" text-center #profilePic [style.background-image]="'url(' + jobDetail.profilePic + ')'">
-  </div>
+  <!--Aqui deberia ir la imagen del trabajo-->
+  <img src = "assets/img/badu-live.png">
+  
+
+  <ion-row>
+      <ion-col >
+        <h2>{{jobDetail.title}}</h2>
+      </ion-col>
+      <ion-col  icon-end>
+          <ion-item>
+              <ion-avatar item-center>
+                  <img src="{{employer.imageEmployer}}">
+              </ion-avatar>
+          </ion-item>
+          <h6>{{employer.nameEmploye}}</h6>
+      </ion-col>
+    </ion-row>
 
   <div class="jobDetail" padding>
-    <h2>{{jobDetail.title}}</h2>
+   
     <p>{{jobDetail.description}}</p>
     <p>{{jobDetail.jobcost}}</p>
     <p>{{jobDetail.dateposted}}</p>
@@ -23,40 +38,9 @@
     <p>{{jobDetail.numbervacancies}}</p>
 
 
-    <h2>{{jobDetail.title}}</h2>
-    <p>{{jobDetail.description}}</p>
-    <p>{{jobDetail.jobcost}}</p>
-    <p>{{jobDetail.dateposted}}</p>
-    <p>{{jobDetail.datestart}}</p>
-    <p>{{jobDetail.dateend}}</p>
-    <p>{{jobDetail.numbervacancies}}</p>
-
-    <h2>{{jobDetail.title}}</h2>
-    <p>{{jobDetail.description}}</p>
-    <p>{{jobDetail.jobcost}}</p>
-    <p>{{jobDetail.dateposted}}</p>
-    <p>{{jobDetail.datestart}}</p>
-    <p>{{jobDetail.dateend}}</p>
-    <p>{{jobDetail.numbervacancies}}</p>
-
-    <h2>{{jobDetail.title}}</h2>
-    <p>{{jobDetail.description}}</p>
-    <p>{{jobDetail.jobcost}}</p>
-    <p>{{jobDetail.dateposted}}</p>
-    <p>{{jobDetail.datestart}}</p>
-    <p>{{jobDetail.dateend}}</p>
-    <p>{{jobDetail.numbervacancies}}</p>
-
-    <h2>{{jobDetail.title}}</h2>
-    <p>{{jobDetail.description}}</p>
-    <p>{{jobDetail.jobcost}}</p>
-    <p>{{jobDetail.dateposted}}</p>
-    <p>{{jobDetail.datestart}}</p>
-    <p>{{jobDetail.dateend}}</p>
-    <p>{{jobDetail.numbervacancies}}</p>
 
   </div>
 
-    <button class="apply" ion-button (click)="Upload()"  full>Upload</button>
+    <button ion-button (click)="openApplyForm()"  full>{{ APPLY | translate}}</button>
 
 </ion-content>

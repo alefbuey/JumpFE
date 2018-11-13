@@ -1,4 +1,3 @@
-import { DeprecatedI18NPipesModule } from "@angular/common";
 
 /**
  * A generic model that our Master-Detail pages list, create, and delete.
@@ -9,7 +8,7 @@ import { DeprecatedI18NPipesModule } from "@angular/common";
  * The Items service manages creating instances of Item, so go ahead and rename
  * that something that fits your app as well.
  */
-export class Job {
+export class JobFeed {
 
   constructor(fields: any) {
     // Quick and dirty extend/assign fields to this model
@@ -22,7 +21,7 @@ export class Job {
 }
 
 
-export interface Job{
+export interface JobFeed{
     idemployer: number,
     idjob: number,
     jobmode: number,
@@ -31,6 +30,5 @@ export interface Job{
     title: string,
     jobcost: number,
     dateposted: string,
-    dateend: string,
     numbervacancies: number
 }
