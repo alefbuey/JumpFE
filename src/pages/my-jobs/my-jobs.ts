@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ApplyingJobsPage, AcceptedJobsPage } from '../';
+import { ApplyingJobsPage, AcceptedJobsPage } from '..';
 import { TranslateService } from '@ngx-translate/core';
 
 
 @IonicPage()
 @Component({
-  selector: 'page-myjobs',
-  templateUrl: 'myjobs.html',
+  selector: 'page-my-jobs',
+  templateUrl: 'my-jobs.html',
 })
-export class MyjobsPage {
+export class MyJobsPage {
   tab1Root: any = ApplyingJobsPage;
   tab2Root: any = AcceptedJobsPage;
 
@@ -24,7 +24,7 @@ export class MyjobsPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MyjobsPage');
+    console.log('ionViewDidLoad MyJobsPage');
   }
 
 }

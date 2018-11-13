@@ -5,18 +5,18 @@ import { Jobs } from '../../providers';
 
 @IonicPage()
 @Component({
-  selector: 'page-accepted-jobs',
-  templateUrl: 'accepted-jobs.html',
+  selector: 'page-accepted-business',
+  templateUrl: 'accepted-business.html',
 })
-export class AcceptedJobsPage {
-  acceptedJobs: Jobs;
+export class AcceptedBusinessPage {
+  acceptedBusiness: Jobs;
 
   constructor(public navCtrl: NavController,public jobs: Jobs,  public navParams: NavParams) {
-    this.jobs.acceptedJobs().subscribe(res => this.acceptedJobs = res);
+   // this.jobs.acceptedBusiness().subscribe(res => this.acceptedBusiness = res);
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AcceptedJobsPage');
+    console.log('ionViewDidLoad AcceptedBusinessPage');
   }
 
   // openAcceptedJob(job: JobFeed) {

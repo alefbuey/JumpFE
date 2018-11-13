@@ -15,10 +15,22 @@ export class Jobs {
     return this.api.get('feed/'+ this.user._user).map(res => (res as any) as Jobs);
   }
 
-  //Preguntar que hace esta funcion
-  getAcceptedJobs(params?: any) : Observable<Jobs> {
+  acceptedJobs(params?: any) : Observable<Jobs> {
     return this.api.get('getAcceptedJobs/'+ this.user._user).map(res => (res as any) as Jobs);
   }
+
+  applyingJobs(params?: any) : Observable<Jobs> {
+    return this.api.get('getApplyingJobs/'+ this.user._user).map(res => (res as any) as Jobs);
+  }
+
+  acceptedBusiness(params?: any) : Observable<Jobs> {
+    return this.api.get('getAcceptedBusiness/'+ this.user._user).map(res => (res as any) as Jobs);
+  }
+
+  applyingBusiness(params?: any) : Observable<Jobs> {
+    return this.api.get('getApplyingBusiness/'+ this.user._user).map(res => (res as any) as Jobs);
+  }
+
 
   create(jobInfo: any) {
     let seq = this.api.post('createJob', jobInfo).share();

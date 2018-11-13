@@ -16,8 +16,14 @@ export const Tab4Root = 'ChatPage';
 export const ProfilePage = 'ProfilePage';
 
 //MY JOBS
-export const MyjobsPage = 'MyjobsPage'; //It is a tab page
+export const MyJobsPage = 'MyJobsPage'; //It is a tab page
+
+
 export const ApplyingJobsPage = 'ApplyingJobsPage';
 export const AcceptedJobsPage = 'AcceptedJobsPage';
+export const ApplyingBusinessPage = 'ApplyingBusinessPage';
+export const AcceptedBusinessPage = 'AcceptedBusinessPage';
+
+
 export const ApplyFormPage = 'ApplyFormPage'
 

@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { MyjobsPage } from './myjobs';
+import { MyJobsPage } from './my-jobs';
 import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
-    MyjobsPage,
+    MyJobsPage,
   ],
   imports: [
-    IonicPageModule.forChild(MyjobsPage),
+    IonicPageModule.forChild(MyJobsPage),
     TranslateModule.forChild()
 
   ],

@@ -1,0 +1,37 @@
+<ion-header>
+
+    <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>{{ APPLYING_BUSINESS | translate }}</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+
+  <ion-content padding>
+      <h1>ESPERAR A OSCAR PARA PREGUNTAR SOBRE CONSULTA</h1>
+
+      <ion-card *ngFor="let job of applyingBusiness">
+  
+        <!-- TO DO -->
+          <button ion-item (click)="openApplyingBusinessw(job)">
+            
+            <!-- <ion-item>
+                <ion-avatar item-start>
+                    <img src="{{job.imageEmployer}}">
+                </ion-avatar>
+              <h2>{{job.nameEmploye}}</h2>
+            </ion-item>    -->
+            <!-- <img [src]="job.image"> -->
+        
+            <ion-card-content>
+              <h2>{{job.title}}</h2>
+                  <p>Salary: {{job.jobcost}}</p>
+                  <p>End: {{job.dateend}}</p>
+              </ion-card-content>
+            </button>
+          </ion-card>
+  </ion-content>
+  
