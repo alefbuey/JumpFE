@@ -89,4 +89,8 @@ export class User {
     return this.api.get('profile/'+idUser);
   }
 
+  selectProfileImage(idUser){
+    return this.api.get('getImageById/'+idUser);
+  }
+
 }
