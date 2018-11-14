@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, ModalController, NavController, NavParams } from 'ionic-angular';
 import { Jobs } from '../../providers';
 
 
@@ -12,8 +12,8 @@ import { Jobs } from '../../providers';
 export class ApplyingBusinessPage {
   applyingBusiness: Jobs;
 
-  constructor(public navCtrl: NavController,public jobs: Jobs,  public navParams: NavParams) {
-    //this.jobs.applyingBusiness().subscribe(res => this.applyingBusiness = res);
+  constructor(public navCtrl: NavController,public jobs: Jobs,  public navParams: NavParams, public modalCtrl: ModalController) {
+    this.jobs.applyingBusiness().subscribe(res => this.applyingBusiness = res);
   }
 
   ionViewDidLoad() {

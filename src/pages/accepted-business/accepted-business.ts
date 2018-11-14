@@ -12,7 +12,7 @@ export class AcceptedBusinessPage {
   acceptedBusiness: Jobs;
 
   constructor(public navCtrl: NavController,public jobs: Jobs,  public navParams: NavParams) {
-   // this.jobs.acceptedBusiness().subscribe(res => this.acceptedBusiness = res);
+    this.jobs.acceptedBusiness().subscribe(res => this.acceptedBusiness = res);
   }
 
   ionViewDidLoad() {

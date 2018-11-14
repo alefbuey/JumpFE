@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ApplyingJobsPage, AcceptedJobsPage } from '..';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, Tabs, NavController, NavParams } from 'ionic-angular';
+import { ApplyingJobsPage, AcceptedJobsPage } from '../';
 import { TranslateService } from '@ngx-translate/core';
 
 
@@ -10,6 +10,9 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: 'my-jobs.html',
 })
 export class MyJobsPage {
+
+  // @ViewChild('myTab') tabRef: Tabs;
+
   tab1Root: any = ApplyingJobsPage;
   tab2Root: any = AcceptedJobsPage;
 
@@ -20,10 +23,14 @@ export class MyJobsPage {
       this.tab1Title = values['APPLYING'];
       this.tab2Title = values['ACCEPTED'];
 
+      
+
     });
   }
 
   ionViewDidLoad() {
+    // this.tabRef.select(0);
+
     console.log('ionViewDidLoad MyJobsPage');
   }
 

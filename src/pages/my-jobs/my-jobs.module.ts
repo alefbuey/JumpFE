@@ -12,5 +12,8 @@ import { TranslateModule } from '@ngx-translate/core';
     TranslateModule.forChild()
 
   ],
+  exports: [
+    MyJobsPage
+  ]
 })
-export class MyjobsPageModule {}
+export class MyJobsPageModule {}
