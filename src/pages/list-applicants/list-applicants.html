@@ -1,0 +1,40 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ LIST_APPLICANTS| translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-card *ngFor="let user of applicants">
+      <ion-item>
+          <ion-avatar item-start>
+              <img src="{{user.image}}">
+          </ion-avatar>
+        <h2>{{user.name}}</h2>
+      </ion-item>    
+      <!-- <img [src]="job.image"> -->
+  
+      <ion-card-content>
+            <p>Salary: {{user.salary}}</p>
+            <p>Rank: {{user.rank}}</p>
+            <p>Proposal: {{user.postedreason}}</p>
+            <p>Counteroffer: {{user.counteroffer}}</p>
+            <p>Reason: {{user.counterofferreason}}</p>
+        </ion-card-content>
+
+      <ion-row justify-content-center align-items-center >
+        <ion-col>
+          <button ion-button color="secondary">Accept</button>
+        </ion-col>
+        <ion-col>
+          <button ion-button color="danger">Discard</button>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+</ion-content>

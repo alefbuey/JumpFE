@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, ModalController, NavController, NavParams } from 'ionic-angular';
 import { Jobs } from '../../providers';
+import { ListApplicantsPage } from '../'
 
 
 
@@ -16,14 +17,11 @@ export class ApplyingBusinessPage {
     this.jobs.applyingBusiness().subscribe(res => this.applyingBusiness = res);
   }
 
+  openPostedJob(job){
+    this.navCtrl.push(ListApplicantsPage, {idJob: job.idjob})
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad ApplyingBusinessPage');
   }
 
-  // openAcceptedJob(job: JobFeed) {
-  //   this.navCtrl.setRoot('JobDetailPage', {
-  //     idJob: job.idjob,
-  //     jobMode: job.jobmode
-  //   });
-  // }
 }

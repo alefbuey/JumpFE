@@ -23,7 +23,7 @@ export const ApplyingJobsPage = 'ApplyingJobsPage';
 export const AcceptedJobsPage = 'AcceptedJobsPage';
 export const ApplyingBusinessPage = 'ApplyingBusinessPage';
 export const AcceptedBusinessPage = 'AcceptedBusinessPage';
-
+export const ListApplicantsPage = 'ListApplicantsPage'
 
 export const ApplyFormPage = 'ApplyFormPage'
 

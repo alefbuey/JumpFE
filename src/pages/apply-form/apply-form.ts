@@ -71,7 +71,7 @@ export class ApplyFormPage {
         position: 'bottom'
       });
       toast.present();
-      this.navCtrl.push(MainPage);
+      this.navCtrl.setRoot(MainPage);
     }, (err) => {
 
       //this.navCtrl.push(MainPage);

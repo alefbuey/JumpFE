@@ -1,5 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
-import { IonicPage, Tabs, NavController, NavParams } from 'ionic-angular';
+import { Component } from '@angular/core';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ApplyingJobsPage, AcceptedJobsPage } from '../';
 import { TranslateService } from '@ngx-translate/core';
 

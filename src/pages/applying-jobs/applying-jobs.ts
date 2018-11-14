@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { Jobs } from '../../providers'
-import { MyBusinessPageModule } from '../my-business/my-business.module';
-import { MyJobsPage } from '../my-jobs/my-jobs';
 
 @IonicPage({ priority: 'high' })
 @Component({

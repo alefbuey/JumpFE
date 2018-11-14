@@ -4,6 +4,8 @@ import { Injectable } from '@angular/core';
 
 import { Api } from '../api/api';
 
+import { Applicant } from '../../models/applicant'
+
 
 /**
  * Most apps have the concept of a User. This is a simple provider
@@ -93,4 +95,8 @@ export class User {
     return this.api.get('getImageById/'+idUser);
   }
 
+
+  listApplicants(idJob){
+    return this.api.get('applicants/'+idJob).map(res => (res as any) as Applicant[])
+  }
 }
