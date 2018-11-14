@@ -23,9 +23,9 @@ export class MyBusinessPage {
   tab1Title = " ";
   tab2Title = " ";
   constructor(public navCtrl: NavController, public navParams: NavParams,public translateService: TranslateService) {
-        translateService.get(['APPLYING', 'ACCEPTED']).subscribe(values => {
-      this.tab1Title = values['APPLYING'];
-      this.tab2Title = values['ACCEPTED'];
+        translateService.get(['POSTED', 'IN_COURSE']).subscribe(values => {
+      this.tab1Title = values['POSTED'];
+      this.tab2Title = values['IN_COURSE'];
 
     });
   }

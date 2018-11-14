@@ -28,7 +28,7 @@ export class Jobs {
   }
 
   applyingBusiness(params?: any) : Observable<Jobs> {
-    return this.api.get('getApplyingBusiness/'+ this.user._user).map(res => (res as any) as Jobs);
+    return this.api.get('getPostedBusiness/'+ this.user._user).map(res => (res as any) as Jobs);
   }
 
 
