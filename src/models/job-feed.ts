@@ -26,7 +26,7 @@ export interface JobFeed{
     idjob: number,
     jobmode: number,
     imageEmployer: string,
-    nameEmploye: string,
+    nameEmployer: string,
     title: string,
     jobcost: number,
     dateposted: string,

@@ -51,7 +51,7 @@ export class ListMasterPage {
       idjob: jobFeed.idjob,
       jobMode: jobFeed.jobmode,
       imageEmployer: jobFeed.imageEmployer,
-      nameEmploye: jobFeed.nameEmploye
+      nameEmploye: jobFeed.nameEmployer
     });
   }
 
