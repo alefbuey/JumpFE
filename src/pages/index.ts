@@ -27,3 +27,4 @@ export const ListApplicantsPage = 'ListApplicantsPage'
 
 export const ApplyFormPage = 'ApplyFormPage'
 
+export const GeneralProfilePage = 'GeneralProfilePage'

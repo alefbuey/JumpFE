@@ -15,7 +15,7 @@ export class ListMasterPage {
 
   constructor(public navCtrl: NavController, public jobs: Jobs, public modalCtrl: ModalController){
     //this.currentJobs = this.jobs.query()
-    this.jobs.getFeed().subscribe(res => this.currentJobs = this.makeup(res));
+    this.jobs.getFeed().subscribe(res => this.currentJobs = res as any as JobFeed[]);
   }
 
 
@@ -69,13 +69,6 @@ export class ListMasterPage {
   goToProfile(idEmployer: any){
     this.navCtrl.push('ProfilePage',{idEmployer: idEmployer})
 
-  }
-
-  makeup(jobs){
-    jobs.forEach(job => {
-      job.dateposted = job.dateposted.substr(0,10);
-    }); 
-    return jobs as any as JobFeed[]
   }
 
 }
