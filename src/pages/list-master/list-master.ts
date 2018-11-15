@@ -11,7 +11,7 @@ import { JobCreatePage } from '..';
 })
 export class ListMasterPage {
   currentJobs : JobFeed[];
- 
+  myBool = false;
 
   constructor(public navCtrl: NavController, public jobs: Jobs, public user: User, public modalCtrl: ModalController){
     //this.currentJobs = this.jobs.query()
@@ -34,15 +34,6 @@ export class ListMasterPage {
   openCreateForm(){
     this.navCtrl.push(JobCreatePage)
   }
-   // createJob() {
-  //   let addModal = this.modalCtrl.create(JobCreatePage);
-  //   addModal.onDidDismiss(job => {
-  //     if (job) {
-  //       this.jobs.create(job);
-  //     }
-  //   })
-  //   addModal.present();
-  // }
 
   /**
    * Delete an job from the list of jobs.
@@ -60,12 +51,6 @@ export class ListMasterPage {
     });
   }
 
-
-  showImage(job){
-    //return 'blob:http://localhost/home/ferz/Proyectos/JumpBE/' + job.imageEmployer
-    return '../../assets/' + job.imageEmployer
-  }
-
   goToProfile(idEmployer: any){
     this.navCtrl.push('ProfilePage',{idEmployer: idEmployer})
 
@@ -78,5 +63,6 @@ export class ListMasterPage {
     }
     console.log(data)
     this.jobs.addFavJob(data);
+    this.myBool = !this.myBool
   }
 }

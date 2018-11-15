@@ -21,4 +21,16 @@ export class Applicant {
         postedreason: string,
         counterofferreason: string
 }
+
+export interface MemberTeam{ //ver que info voy agregar para mostrar en cada pagina
+        idemployee: number,
+        username: string,
+        userimage: string,
+        idjob: number,
+        rankUser: number,
+        salary: number,
+        counteroffer: number,
+        postedreason: string,
+        counterofferreason: string
+}
   

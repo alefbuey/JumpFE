@@ -41,7 +41,8 @@ export class MyApp {
     { title: 'Add Job', component: 'JobCreatePage' },
     { title: 'Settings', component: 'ContentPage' },
     { title: 'Logout', component: 'LoginPage' },
-    { title: 'Cards', component: 'CardsPage'}
+    { title: 'Cards', component: 'CardsPage'},
+    { title: 'Maps', component: 'MapPage'}
   ]
 
   constructor(private translate: TranslateService, platform: Platform, public user: User, settings: Settings, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {

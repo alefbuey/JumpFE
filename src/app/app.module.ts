@@ -10,8 +10,13 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MomentModule } from 'angular2-moment';
 
+
+//GOOGLE MAPS
+import { GoogleMaps } from '@ionic-native/google-maps';
+import { Geolocation } from '@ionic-native/geolocation';
+
 //import { Jobs } from '../mocks/providers/jobs';
-import { Settings, User, Api, Jobs } from '../providers';
+import { Settings, User, Api, Jobs, Map } from '../providers';
 import { MyApp } from './app.component';
 
 // The translate loader needs to know where to load i18n files
@@ -66,8 +71,11 @@ export function provideSettings(storage: Storage) {
     Api,
     Jobs,
     User,
+    Map,
     Camera,
     SplashScreen,
+    GoogleMaps,
+    Geolocation,
     StatusBar,
     { provide: Settings, useFactory: provideSettings, deps: [Storage] },
     // Keep this to enable Ionic's runtime error handling during development

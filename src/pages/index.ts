@@ -25,6 +25,8 @@ export const ApplyingBusinessPage = 'ApplyingBusinessPage';
 export const AcceptedBusinessPage = 'AcceptedBusinessPage';
 export const ListApplicantsPage = 'ListApplicantsPage'
 
-export const ApplyFormPage = 'ApplyFormPage'
+export const ApplyFormPage = 'ApplyFormPage';
 
-export const GeneralProfilePage = 'GeneralProfilePage'
+export const GeneralProfilePage = 'GeneralProfilePage';
+
+export const ListTeamPage = 'ListTeamPage';
