@@ -7,6 +7,7 @@ import { User } from '../providers/user/user'
 import { FirstRunPage } from '../pages';
 import { Settings } from '../providers';
 
+
 @Component({
   template: `<ion-menu [content]="content">
     <ion-header>
@@ -17,8 +18,7 @@ import { Settings } from '../providers';
 
 
     <ion-content>
-    <ion-avatar class="avatar" >
-    </ion-avatar>
+    <div class="profilemenu" (click)="openPage({ title: 'Profile', component: 'ProfilePage' })"></div>
       <ion-list>
         <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
           {{p.title}}
@@ -93,4 +93,8 @@ export class MyApp {
       this.nav.push(page.component,{}, { animate: true, duration: 300 });
     }
   }
+
+
+
+
 }
