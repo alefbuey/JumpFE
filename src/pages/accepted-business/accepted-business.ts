@@ -25,4 +25,8 @@ export class AcceptedBusinessPage {
   //     jobMode: job.jobmode
   //   });
   // }
+
+  openAcceptedBusiness(job){
+    this.navCtrl.push('ListTeamPage', {idJob: job.idjob})
+  }
 }
