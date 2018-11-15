@@ -3,6 +3,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Api, Jobs} from '../../providers'
 import { JobDetail } from '../../models/job-detail';
 import { ApplyFormPage } from '..';
+import { Map } from '../../providers/map/map' 
+
+
 
 @IonicPage()
 @Component({
@@ -19,8 +22,9 @@ export class JobDetailPage {
 
   idjob : 0;
   //jobProv: JobDetailProv
+
  
-  constructor(public navCtrl: NavController, public api: Api, public job: Jobs , navParams: NavParams) {
+  constructor(public navCtrl: NavController, public api: Api, public job: Jobs , public map: Map, navParams: NavParams) {
     this.idjob = navParams.get('idjob');
     var jobMode = navParams.get('jobMode');
     var imageEmployer = navParams.get('imageEmployer');
@@ -37,4 +41,17 @@ export class JobDetailPage {
     this.navCtrl.push(ApplyFormPage, {idjob: this.idjob, jobTitle: this.jobDetail.title, salary: this.jobDetail.jobcost})
   }
 
+  ionViewDidLoad() {
+    this.map.getPosition()
+  }
+
+
+
+
+  
+
+
 }
+
+
+
