@@ -10,13 +10,14 @@ import { JobCreatePage } from '..';
   templateUrl: 'list-master.html'
 })
 export class ListMasterPage {
-  currentJobs : Jobs;
+  currentJobs : JobFeed[];
  
 
   constructor(public navCtrl: NavController, public jobs: Jobs, public modalCtrl: ModalController){
     //this.currentJobs = this.jobs.query()
-    this.jobs.getFeed().subscribe(res => this.currentJobs = res);
+    this.jobs.getFeed().subscribe(res => this.currentJobs = this.makeup(res));
   }
+
 
 
   /**
@@ -29,15 +30,19 @@ export class ListMasterPage {
    * Prompt the user to add a new job. This shows our JobCreatePage in a
    * modal and then adds the new job to our data source if the user created one.
    */
-  createJob() {
-    let addModal = this.modalCtrl.create(JobCreatePage);
-    addModal.onDidDismiss(job => {
-      if (job) {
-        this.jobs.create(job);
-      }
-    })
-    addModal.present();
+
+  openCreateForm(){
+    this.navCtrl.push(JobCreatePage)
   }
+   // createJob() {
+  //   let addModal = this.modalCtrl.create(JobCreatePage);
+  //   addModal.onDidDismiss(job => {
+  //     if (job) {
+  //       this.jobs.create(job);
+  //     }
+  //   })
+  //   addModal.present();
+  // }
 
   /**
    * Delete an job from the list of jobs.
@@ -47,7 +52,7 @@ export class ListMasterPage {
    * Navigate to the detail page for this job.
    */
   openJob(jobFeed: JobFeed) {
-    this.navCtrl.setRoot('JobDetailPage', {
+    this.navCtrl.push('JobDetailPage', {
       idjob: jobFeed.idjob,
       jobMode: jobFeed.jobmode,
       imageEmployer: jobFeed.imageEmployer,
@@ -56,29 +61,21 @@ export class ListMasterPage {
   }
 
 
-
-  openProfile(){
-    this.navCtrl.push('ProfilePage');
-  }
-
-
-
   showImage(job){
     //return 'blob:http://localhost/home/ferz/Proyectos/JumpBE/' + job.imageEmployer
     return '../../assets/' + job.imageEmployer
   }
 
   goToProfile(idEmployer: any){
-    this.navCtrl.push('ProfilePage')
+    this.navCtrl.push('ProfilePage',{idEmployer: idEmployer})
 
   }
 
-  goToOtherProfile(){
-    this.navCtrl.push('ProfilePage')
-
-
+  makeup(jobs){
+    jobs.forEach(job => {
+      job.dateposted = job.dateposted.substr(0,10);
+    }); 
+    return jobs as any as JobFeed[]
   }
-
-  
 
 }

@@ -99,4 +99,35 @@ export class User {
   listApplicants(idJob){
     return this.api.get('applicants/'+idJob).map(res => (res as any) as Applicant[])
   }
+
+  acceptApplicant(jobEmployeeInfo: any){
+    let seq = this.api.post('acceptApplicant', jobEmployeeInfo).share();
+
+    seq.subscribe((res: any) => {
+      // If the API returned a successful response, mark the user as logged in
+      if (res.status == 'success') {
+        //Do nothing
+      }
+    }, err => {
+      console.error('ERROR', err);
+    });
+
+    return seq;
+  }
+
+  rejectApplicant(jobEmployeeInfo: any){
+    let seq = this.api.post('deleteApplicant', jobEmployeeInfo).share();
+
+    seq.subscribe((res: any) => {
+      // If the API returned a successful response, mark the user as logged in
+      if (res.status == 'success') {
+        //Do nothing
+      }
+    }, err => {
+      console.error('ERROR', err);
+    });
+
+    return seq;
+  }
+
 }
