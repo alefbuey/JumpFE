@@ -7,12 +7,10 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class Api {
 
-<<<<<<< HEAD
+
 
   url: string = 'http://localhost:8100';
-=======
-  url: string = 'http://192.168.88.55:3000';
->>>>>>> e93899ef374dde212fff34f205de287dac8c1046
+
 
   constructor(public http: HttpClient) {
   }
