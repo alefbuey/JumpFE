@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, ModalController, NavController } from 'ionic-angular';
 import { JobFeed } from '../../models/job-feed';
-import { Jobs } from '../../providers';
+import { Jobs, User } from '../../providers';
 import { JobCreatePage } from '..';
 
 @IonicPage()
@@ -13,9 +13,9 @@ export class ListMasterPage {
   currentJobs : JobFeed[];
  
 
-  constructor(public navCtrl: NavController, public jobs: Jobs, public modalCtrl: ModalController){
+  constructor(public navCtrl: NavController, public jobs: Jobs, public user: User, public modalCtrl: ModalController){
     //this.currentJobs = this.jobs.query()
-    this.jobs.getFeed().subscribe(res => this.currentJobs = this.makeup(res));
+    this.jobs.getFeed().subscribe(res => this.currentJobs = res as any as JobFeed[]);
   }
 
 
@@ -71,11 +71,12 @@ export class ListMasterPage {
 
   }
 
-  makeup(jobs){
-    jobs.forEach(job => {
-      job.dateposted = job.dateposted.substr(0,10);
-    }); 
-    return jobs as any as JobFeed[]
+  addToFavorites(job){
+    var data = {
+      idemployee: this.user._user,
+      idjob: job.idjob
+    }
+    console.log(data)
+    this.jobs.addFavJob(data);
   }
-
 }

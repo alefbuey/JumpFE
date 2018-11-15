@@ -16,8 +16,8 @@
       <ion-item>
         <ion-row>
           <ion-col class = "center-content">
-              <ion-avatar class="avatar" >
-                  <img src="{{user.image}}">
+              <ion-avatar class="avatar" (click)="goToProfile(user.idemployee)" >
+                      <img src="{{user.image}}">
               </ion-avatar>
               <h3>{{user.name}}</h3>
           </ion-col>

@@ -36,7 +36,6 @@
       <h2>{{job.title}}</h2>
           <p >Salary: {{job.jobcost}}</p>
           <p>Vacancies: {{job.numbervacancies}}</p>
-          <p>Posted: {{job.dateposted}}</p>
       </ion-card-content>
 
       </button>
@@ -44,7 +43,7 @@
 
       <ion-row>
         <ion-col>
-          <button ion-button class="favorites" clear small icon-start (click)=addtoFavorites()>
+          <button ion-button class="favorites" clear small icon-start (click)="addToFavorites(job)">
               <ion-icon name='heart'></ion-icon> Favorites
 
             </button>
@@ -56,8 +55,8 @@
             </button>
         </ion-col>
         <ion-col center text-center>
-          <ion-note ccolor="light">
-            11h ago
+          <ion-note color="light">
+              {{job.dateposted | amTimeAgo}}
           </ion-note>
         </ion-col>
       </ion-row>
