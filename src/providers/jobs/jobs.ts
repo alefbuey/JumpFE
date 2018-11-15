@@ -65,4 +65,19 @@ export class Jobs {
 
     return seq;
   }
+
+  addFavJob(jobInfo: any) {
+    let seq = this.api.post('addToFavorites', jobInfo).share();
+
+    seq.subscribe((res: any) => {
+      // If the API returned a successful response, mark the user as logged in
+      if (res.status == 'success') {
+        //Do nothing
+      }
+    }, err => {
+      console.error('ERROR', err);
+    });
+
+    return seq;
+  }
 }
