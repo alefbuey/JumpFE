@@ -11,7 +11,7 @@ export class Applicant {
   }
 
   export interface Applicant{
-        iduser: number,
+        idemployee: number,
         username: string,
         userimage: string,
         idjob: number,
