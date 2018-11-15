@@ -1,6 +1,8 @@
 {
   "BACK_BUTTON_TEXT": "Back",
-
+  "ERROR_APPLICANT" : "Error to do the desired action",
+  "ADD_APPLICANT" : "Accepted Applicant",
+  "REJECT_APPLICANT" : "Rejected Applicant",
   "NAME": "Name",
   "LASTNAME": "Lastname",
   "EMAIL": "Email",

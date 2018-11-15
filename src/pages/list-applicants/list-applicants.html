@@ -11,30 +11,48 @@
 
 
 <ion-content padding>
-    <ion-card *ngFor="let user of applicants">
+  <ion-list>
+    <ion-item-sliding *ngFor="let user of applicants">
       <ion-item>
-          <ion-avatar item-start>
-              <img src="{{user.image}}">
-          </ion-avatar>
-        <h2>{{user.name}}</h2>
+        <ion-row>
+          <ion-col class = "center-content">
+              <ion-avatar class="avatar" >
+                  <img src="{{user.image}}">
+              </ion-avatar>
+              <h3>{{user.name}}</h3>
+          </ion-col>
+          <ion-col>
+
+          </ion-col>
+          <ion-list>
+              <p>Proposal: {{user.postedreason}}</p>
+              <p>Counteroffer: {{user.counteroffer}}</p>
+              <p>Reason: {{user.counterofferreason}}</p>
+          </ion-list>
+        </ion-row>
+
       </ion-item>    
       <!-- <img [src]="job.image"> -->
   
-      <ion-card-content>
+      <!-- <ion-card-content>
             <p>Salary: {{user.salary}}</p>
             <p>Rank: {{user.rank}}</p>
-            <p>Proposal: {{user.postedreason}}</p>
-            <p>Counteroffer: {{user.counteroffer}}</p>
-            <p>Reason: {{user.counterofferreason}}</p>
-        </ion-card-content>
 
-      <ion-row justify-content-center align-items-center >
+        </ion-card-content> -->
+
+        <ion-item-options side="right">
+            <button ion-button (click)='acceptApplicant(user)' color="secondary">Accept</button>
+            <button ion-button (click)='rejectApplicant(user)' color="danger">Discard</button>
+          </ion-item-options>
+
+      <!-- <ion-row justify-content-center align-items-center >
         <ion-col>
-          <button ion-button (click) = "accept()" color="secondary">Accept</button>
+          <button ion-button (click)='acceptApplicant(user)' color="secondary">Accept</button>
         </ion-col>
         <ion-col>
-          <button ion-button (click) = "discard" color="danger">Discard</button>
+          <button ion-button (click)='rejectApplicant(user)' color="danger">Discard</button>
         </ion-col>
-      </ion-row>
-    </ion-card>
+      </ion-row> -->
+    </ion-item-sliding>
+  </ion-list>
 </ion-content>

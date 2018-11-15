@@ -52,7 +52,7 @@ export class ListMasterPage {
    * Navigate to the detail page for this job.
    */
   openJob(jobFeed: JobFeed) {
-    this.navCtrl.setRoot('JobDetailPage', {
+    this.navCtrl.push('JobDetailPage', {
       idjob: jobFeed.idjob,
       jobMode: jobFeed.jobmode,
       imageEmployer: jobFeed.imageEmployer,

@@ -1,4 +1,7 @@
 {
+  "ERROR_APPLICANT" : "Error al ejecutar la acción deseada",
+  "ADD_APPLICANT" : "Aplicante Aceptado",
+  "REJECT_APPLICANT" : "Aplicante Rechazado",
   "NAME": "Nombre",
   "LASTNAME": "Apellido",
   "PASSWORD": "Contraseña",
