@@ -12,8 +12,13 @@ export class Jobs {
   
 
   getFeed(params?: any) : Observable<JobFeed[]> {
-    return this.api.get('feed/'+ this.user._user).map(res => (res as any) as JobFeed[]);
+    return this.api.get('feed/'+ this.user._user+'/feed').map(res => (res as any) as JobFeed[]);
   }
+
+  getFavJobs(params?: any) : Observable<JobFeed[]> {
+    return this.api.get('feed/'+ this.user._user+'/fav').map(res => (res as any) as JobFeed[]);
+  }
+
 
   acceptedJobs(params?: any) : Observable<Jobs> {
     return this.api.get('getAcceptedJobs/'+ this.user._user).map(res => (res as any) as Jobs);

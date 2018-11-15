@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, ModalController, NavController, NavParams } from 'ionic-angular';
+import { JobFeed } from '../../models/job-feed'
+import { Jobs, User } from '../../providers'
 
 /**
  * Generated class for the FavoritesPage page.
@@ -15,11 +17,30 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class FavoritesPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  currentJobs : JobFeed[];
+ 
+
+  constructor(public navCtrl: NavController, public jobs: Jobs, public user: User, public modalCtrl: ModalController){
+    //this.currentJobs = this.jobs.query()
+    this.jobs.getFavJobs().subscribe(res => this.currentJobs = res as any as JobFeed[]);
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FavoritesPage');
+  }
+
+  openJob(jobFeed: JobFeed) {
+    this.navCtrl.push('JobDetailPage', {
+      idjob: jobFeed.idjob,
+      jobMode: jobFeed.jobmode,
+      imageEmployer: jobFeed.imageEmployer,
+      nameEmploye: jobFeed.nameEmployer
+    });
+  }
+
+  goToProfile(idEmployer: any){
+    this.navCtrl.push('ProfilePage',{idEmployer: idEmployer})
+
   }
 
 }

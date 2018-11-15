@@ -1,3 +1,26 @@
 page-favorites {
 
+	.pagebackground{
+		background-color: #DBDBDB,
+
+	}
+
+	.cardavatar{
+		background-color: #4CADD3,
+
+	}
+
+	button.favorites {
+      	color: #fff;
+      	
+      	   	 	&.activated {
+    		color: #DC3E52 ;
+    	}
+   }
+
+
+	.cardfoot{
+
+
+	}
 }
