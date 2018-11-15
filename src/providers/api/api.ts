@@ -7,10 +7,18 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class Api {
 
-  url: string = 'http://localhost:8100';
+  url: string = 'http://192.168.88.55:3000';
 
   constructor(public http: HttpClient) {
   }
+
+
+// "proxies": [
+  //   {
+  //     "path": "/",
+  //     "proxyUrl": "http://192.168.88.55:3000"
+  //   }
+  // ]
 
   get(endpoint: string, params?: any, reqOpts?: any) {
     if (!reqOpts) {
