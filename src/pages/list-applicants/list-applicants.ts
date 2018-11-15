@@ -30,4 +30,9 @@ export class ListApplicantsPage {
     console.log('ionViewDidLoad ListApplicantsPage');
   }
 
+  // accept(){
+  //   var info = {}
+  //   this.user.accept(info);
+  // }
+
 }

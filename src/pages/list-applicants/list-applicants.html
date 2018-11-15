@@ -30,10 +30,10 @@
 
       <ion-row justify-content-center align-items-center >
         <ion-col>
-          <button ion-button color="secondary">Accept</button>
+          <button ion-button (click) = "accept()" color="secondary">Accept</button>
         </ion-col>
         <ion-col>
-          <button ion-button color="danger">Discard</button>
+          <button ion-button (click) = "discard" color="danger">Discard</button>
         </ion-col>
       </ion-row>
     </ion-card>

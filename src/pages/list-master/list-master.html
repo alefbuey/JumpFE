@@ -7,7 +7,7 @@
         <ion-icon name="menu"></ion-icon>
     </button>
     <ion-buttons end>
-      <button ion-button icon-only (click)="createJob()">
+      <button ion-button icon-only (click)="openCreateForm()">
         <ion-icon name="add"></ion-icon>
       </button>
     </ion-buttons>
@@ -23,7 +23,7 @@
   
     
     <ion-item>
-        <ion-avatar item-start (click)="goToOtherProfile()">
+        <ion-avatar item-start (click)="goToProfile()">
             <img src="{{job.imageEmployer}}" >
         </ion-avatar>
       <h2>{{job.nameEmployer}}</h2>
