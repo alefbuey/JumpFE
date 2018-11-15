@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Profile} from '../../models/profile';
-import { Api , User } from '../../providers'
+import { Api , User } from '../../providers';
 
 
 @IonicPage()

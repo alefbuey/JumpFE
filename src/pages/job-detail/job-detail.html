@@ -11,24 +11,26 @@
 
 <ion-content *ngIf="jobDetail">
   <!--Aqui deberia ir la imagen del trabajo-->
-  <img src = "assets/img/badu-live.png">
   
 
-  <ion-row>
-      <ion-col >
-        <h2>{{jobDetail.title}}</h2>
-      </ion-col>
-      <ion-col  icon-end>
-          <ion-item>
-              <ion-avatar item-center>
-                  <img src="{{employer.imageEmployer}}">
-              </ion-avatar>
-          </ion-item>
-          <h6>{{employer.nameEmploye}}</h6>
-      </ion-col>
-    </ion-row>
+  <ion-scroll scrollX="true" style="width:100%;height: 360px">
+  <div class="inner">
+    <ion-card *ngFor="let img of jobimages">
+      <img [src]='img.image'>
+    </ion-card>
+  </div>
+  </ion-scroll>
 
-  <div class="jobDetail" padding>
+  <ion-item no-lines class="avatar">
+        <ion-avatar item-start (click)="goToProfile()">
+            <img src="{{employer.imageEmployer}}">
+        </ion-avatar>
+      <h2>{{employer.nameEmploye}}</h2>
+    </ion-item>
+
+
+    <div class="job-detail">
+    <h2>{{jobDetail.title}}</h2>
    
     <p>{{jobDetail.description}}</p>
     <p>{{jobDetail.jobcost}}</p>
@@ -37,12 +39,10 @@
     <p>{{jobDetail.dateend}}</p>
     <p>{{jobDetail.numbervacancies}}</p>
 
+    <button ion-button round full color="secondary" ion-button (click) = "openApplyForm()" color="primary" block>{{ 'APPLY' | translate }}</button>
 
 
   </div>
-
-  <div padding>
-    <button class= "apply" ion-button (click) = "openApplyForm()" color="primary" block>{{ 'APPLY' | translate }}</button>
-  </div>
+  
 
 </ion-content>

@@ -12,9 +12,13 @@ import { ApplyFormPage } from '..';
 
 export class JobDetailPage {
   jobDetail: any;
+
+  //poner luego en la base
+  jobimages: any;
   employer = {
     imageEmployer: "",
-    nameEmploye: ""
+    nameEmploye: "",
+ 
   }
 
   idjob : 0;
@@ -30,6 +34,20 @@ export class JobDetailPage {
     this.employer.nameEmploye = nameEmploye;
     
     this.job.select(this.idjob, jobMode).subscribe(res => this.jobDetail= (res as any) as JobDetail);
+
+
+    this.jobimages = [
+    {
+      image: 'assets/img/advance-card-bttf.png'
+    },
+    {
+      image: 'assets/img/advance-card-jp.jpg'
+    },
+    {
+      image: 'assets/img/advance-card-tmntr.jpg'
+    },
+
+    ];
     
   }
 
