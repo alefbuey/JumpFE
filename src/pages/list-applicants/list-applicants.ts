@@ -165,4 +165,5 @@ export class ListApplicantsPage {
     alert.present();
   }
 
+
 }

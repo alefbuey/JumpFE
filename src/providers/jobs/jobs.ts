@@ -11,8 +11,8 @@ export class Jobs {
   constructor( public api: Api, public user: User) {}
   
 
-  getFeed(params?: any) : Observable<Jobs> {
-    return this.api.get('feed/'+ this.user._user).map(res => (res as any) as Jobs);
+  getFeed(params?: any) : Observable<JobFeed[]> {
+    return this.api.get('feed/'+ this.user._user).map(res => (res as any) as JobFeed[]);
   }
 
   acceptedJobs(params?: any) : Observable<Jobs> {

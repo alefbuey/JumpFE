@@ -3,7 +3,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { TranslateService } from '@ngx-translate/core';
 import { Config, Nav, Platform } from 'ionic-angular';
-
+import { User } from '../providers/user/user'
 import { FirstRunPage } from '../pages';
 import { Settings } from '../providers';
 
@@ -45,7 +45,7 @@ export class MyApp {
     { title: 'Cards', component: 'CardsPage'}
   ]
 
-  constructor(private translate: TranslateService, platform: Platform, settings: Settings, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {
+  constructor(private translate: TranslateService, platform: Platform, public user: User, settings: Settings, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -84,6 +84,13 @@ export class MyApp {
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component,{}, { animate: true, duration: 300 });
+    if (page.title == 'Logout') {
+      this.user.logout();
+      this.nav.popToRoot()
+    }else if (page.title == 'Home') {
+      this.nav.setRoot(page.component,{}, { animate: true, duration: 300 });      
+    }else{
+      this.nav.push(page.component,{}, { animate: true, duration: 300 });
+    }
   }
 }
