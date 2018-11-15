@@ -30,7 +30,7 @@
     "@ngx-translate/http-loader": "^2.0.0",
     "angular2-moment": "^1.9.0",
     "bcrypt": "^3.0.2",
-    "cordova-android": "~7.0.0",
+    "cordova-android": "^7.1.2",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-ionic": "^5.2.7",
     "cordova-plugin-ionic-keyboard": "^2.1.3",
