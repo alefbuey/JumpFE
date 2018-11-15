@@ -165,5 +165,8 @@ export class ListApplicantsPage {
     alert.present();
   }
 
+  goToProfile(idEmployer: any){
+    this.navCtrl.push('GeneralProfilePage',{iduser: idEmployer})
 
+  }
 }

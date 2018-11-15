@@ -28,6 +28,6 @@ export interface JobFeed{
     nameEmployer: string,
     title: string,
     jobcost: number,
-    dateposted: string,
+    dateposted: Date,
     numbervacancies: number
 }
