@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 
 import { Api } from '../api/api';
 
-import { Applicant } from '../../models/applicant'
+import { Applicant, MemberTeam } from '../../models/applicant'
 
 
 /**
@@ -98,6 +98,10 @@ export class User {
 
   listApplicants(idJob){
     return this.api.get('applicants/'+idJob).map(res => (res as any) as Applicant[])
+  }
+
+  listTeamMember(idJob){
+    return this.api.get('membersTeam/'+idJob).map(res => (res as any) as MemberTeam[])
   }
 
   acceptApplicant(jobEmployeeInfo: any){
