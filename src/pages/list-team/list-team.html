@@ -4,7 +4,7 @@
     <button ion-button menuToggle>
         <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>{{ LIST_APPLICANTS| translate }}</ion-title>
+    <ion-title>{{ LIST_TEAM| translate }}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -12,7 +12,7 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item-sliding *ngFor="let user of applicants">
+    <ion-item-sliding *ngFor="let user of team">
       <ion-item>
         <ion-row>
           <ion-col class = "center-content">
@@ -42,13 +42,14 @@
 
         <ion-item-options side="right">
             <button ion-button (click)='acceptApplicant(user)' color="secondary">
-              <ion-icon name ="checkmark-circle"></ion-icon>
-              Accept</button>
-            <button ion-button (click)='rejectApplicant(user)' color="danger">
-              <ion-icon name ="checkmark-circle"></ion-icon>
-              Discard</button>
+              <ion-icon name="clipboard"></ion-icon>
+              Status
+            </button>
           </ion-item-options>
 
+        <ion-item-options side="left">
+          <button ion-button (click)='rejectApplicant(user)' color="danger">End Job</button>
+        </ion-item-options>  
       <!-- <ion-row justify-content-center align-items-center >
         <ion-col>
           <button ion-button (click)='acceptApplicant(user)' color="secondary">Accept</button>
