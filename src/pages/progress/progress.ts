@@ -31,9 +31,11 @@ export class ProgressPage {
   }
 
   doPayment(employeeStatus:MemberTeam){
-    var data = {
+    var payload = {
+      idjob: employeeStatus.idjob,
       idemployee :  employeeStatus.idemployee,
-      idjob : employeeStatus.idjob
+      salary : employeeStatus.salary,
+      state : 3
     }
     const prompt = this.alertCtrl.create({
       title: 'Are you sure to do the payment?',
@@ -49,6 +51,7 @@ export class ProgressPage {
         {
           text: 'Yes',
           handler: () => {
+            this.user.savePayment(payload);
             this.showComment(employeeStatus);
           }
         }
@@ -59,13 +62,14 @@ export class ProgressPage {
 
   showComment(employeeStatus:MemberTeam){
 
+
     const prompt = this.alertCtrl.create({
       title: 'How was your experience?',
       message: "Help us with a comment.",
       cssClass: 'generalalert',
       inputs: [
         {
-          name: 'comment',
+          name: 'commentToEmployee',
           placeholder: 'Comment '
         },
       ],
@@ -78,7 +82,15 @@ export class ProgressPage {
         },
         {
           text: 'Save',
-          handler: () => {
+          handler: data => {
+            var payload = {
+              idjob : employeeStatus.idjob,
+              idemployee: employeeStatus.idemployee,
+              comment: data.commentToEmployee,
+              toWho: 'employee'
+            }
+
+            this.user.saveComment(payload);
             this.showRate(employeeStatus);
           }
         }
@@ -88,24 +100,26 @@ export class ProgressPage {
   }
 
   showRate(employeeStatus: MemberTeam){
+    var payload = {
+      idemployee : employeeStatus.idemployee,
+      idjob : employeeStatus.idjob,
+      rankEmployee : employeeStatus.employeeRank
+    }
     const alert = this.alertCtrl.create({
       title: 'Rate your experience',
       cssClass: 'alertstar',
       enableBackdropDismiss:false,
       buttons: [
-           { handler: data => { this.resolveRate(1);}},
-           { handler: data => { this.resolveRate(2);}},
-           { text: '3', handler: data => { this.resolveRate(3);}},
-           { handler: data => { this.resolveRate(4);}},
-           { handler: data => { this.resolveRate(5);}}
+           { handler: () => { payload.rankEmployee = 1; this.user.saveRank(payload);}},
+           { handler: () => { payload.rankEmployee = 2; this.user.saveRank(payload);}},
+           { text: '3', handler: () => { payload.rankEmployee = 3; this.user.saveRank(payload);}},
+           { handler: () => { payload.rankEmployee = 4; this.user.saveRank(payload);}},
+           { handler: () => { payload.rankEmployee = 5; this.user.saveRank(payload);}}
       ]
     });
     alert.present();
   }
 
-  resolveRate(numero: number){
-    console.log(numero)
-  }
 
 }
 
