@@ -25,8 +25,8 @@
 
           </ion-col>
           <ion-list>
-              <p>Proposal: {{user.postedreason}}</p>
-              <p>Counteroffer: {{user.counteroffer}}</p>
+              <p>Progress: {{user.postedreason}}</p>
+              <p>Rank: {{user.counteroffer}}</p>
               <p>Reason: {{user.counterofferreason}}</p>
           </ion-list>
         </ion-row>
@@ -41,14 +41,18 @@
         </ion-card-content> -->
 
         <ion-item-options side="right">
-            <button ion-button (click)='acceptApplicant(user)' color="secondary">
+            <button ion-button (click)='goToChat(user)' color="danger">
+              <ion-icon name="chatbubbles"></ion-icon>
+              Chat
+            </button>
+
+            <button ion-button (click)='goToProgress(user)' color="secondary">
               <ion-icon name="clipboard"></ion-icon>
               Status
             </button>
           </ion-item-options>
 
         <ion-item-options side="left">
-          <button ion-button (click)='rejectApplicant(user)' color="danger">End Job</button>
         </ion-item-options>  
       <!-- <ion-row justify-content-center align-items-center >
         <ion-col>
