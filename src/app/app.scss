@@ -1,4 +1,17 @@
-// http://ionicframework.com/docs/v2/theming/
+.alertstar{
+    button{
+         width: 39px;
+         margin: 0 !important;
+         background-image:url('../assets/icon/star.png');
+         background-repeat: no-repeat;
+         background-position: center;
+         color:#FFB84E  !important;
+         position: center;
+    }
+    .alert-button-group{padding:0; margin-top: 10px; margin-bottom: 10px ;flex-direction: row; justify-content: space-around;}
+    .alert-wrapper{border-radius: 6px;}
+}
+
 
 
 .profilemenu{
@@ -43,3 +56,8 @@ ion-icon {
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+.generalalert{
+    .alert-wrapper{border-radius: 6px;}
+}
+

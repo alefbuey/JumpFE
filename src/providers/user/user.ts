@@ -134,4 +134,51 @@ export class User {
     return seq;
   }
 
+  employeeJobStatus(idJob,idEmployee){
+    return this.api.get('employeeJobStatus/'+idJob+'/'+idEmployee).map(res => (res as any) as MemberTeam)
+
+  }
+
+  savePayment(paymentInfo: any){
+    let seq = this.api.post('savePayment',paymentInfo).share();
+    seq.subscribe((res: any) => {
+      // If the API returned a successful response, mark the user as logged in
+      if (res.status == 'success') {
+        //Do nothing
+      }
+    }, err => {
+      console.error('ERROR', err);
+    });
+
+    return seq;
+  }
+
+  saveComment(commentInfo: any){
+    let seq = this.api.post('saveComment',commentInfo).share();
+    seq.subscribe((res: any) => {
+      // If the API returned a successful response, mark the user as logged in
+      if (res.status == 'success') {
+        //Do nothing
+      }
+    }, err => {
+      console.error('ERROR', err);
+    });
+
+    return seq;
+  }
+
+  saveRank(rankInfo: any){
+    let seq = this.api.post('saveRank',rankInfo).share();
+    seq.subscribe((res: any) => {
+      // If the API returned a successful response, mark the user as logged in
+      if (res.status == 'success') {
+        //Do nothing
+      }
+    }, err => {
+      console.error('ERROR', err);
+    });
+
+    return seq;
+  }
+
 }

@@ -23,14 +23,23 @@ export class Applicant {
 }
 
 export interface MemberTeam{ //ver que info voy agregar para mostrar en cada pagina
-        idemployee: number,
-        username: string,
-        userimage: string,
         idjob: number,
-        rankUser: number,
+        jobtitle: string,
+        idemployee: number,
+        employeeName: string,
+        employeeImage: string,
+        employeeRank: number,
         salary: number,
         counteroffer: number,
         postedreason: string,
-        counterofferreason: string
+        counterofferreason: string,
+        currentMilestone: number,
+        position: string,
+        numbermilestones: number,
+        idemployer: number,
+        employerName: string,
+        employerImage: string,
+        employerRank: number,
+
 }
   

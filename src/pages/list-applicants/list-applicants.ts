@@ -67,6 +67,7 @@ export class ListApplicantsPage {
     let alert = this.alertCtrl.create({
       title: 'Adding Confirmation',
       message: 'Are you sure to add this applicant?',
+      cssClass: 'generalalert',
       buttons: [
         {
           text: 'NO',
