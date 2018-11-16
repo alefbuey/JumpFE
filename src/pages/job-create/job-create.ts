@@ -10,7 +10,7 @@ import { MainPage } from '../'
   templateUrl: 'job-create.html',
 })
 export class JobCreatePage {
-  jobInfo: { idemployer: number, mode: number, title: string, description: string, jobcost:	number, jobcostcovered:	number, datestart: string, dateend:	string, datepostend: string, numbervacancies:	2} =   
+  jobInfo: { idemployer: number, mode: number, title: string, description: string, jobcost:	number, jobcostcovered:	number, datestart: string, dateend:	string, datepostend: string, numbermilestones: 3, numbervacancies:	2} =   
   {
     idemployer    :	0,	
     mode          :	1,		
@@ -20,7 +20,8 @@ export class JobCreatePage {
     jobcostcovered:	5000,
     datestart     :	"2018-12-12",	
     dateend       :	"2018-12-12",	
-    datepostend   :   "2018-12-12",	
+    datepostend   :   "2018-12-12",
+    numbermilestones : 3,	
     numbervacancies :	2 
   };
 
@@ -43,7 +44,7 @@ export class JobCreatePage {
       this.createJobSuccessString = value;
     })
 
-    this.jobInfo.idemployer = user._user
+    this.jobInfo.idemployer = user._user;
   }
 
   ionViewDidLoad() {

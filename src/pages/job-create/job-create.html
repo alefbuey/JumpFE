@@ -40,6 +40,11 @@
       </ion-item>
 
       <ion-item>
+          <ion-label fixed>{{ 'NUMBER_MILESTONES' | translate }}</ion-label>
+          <ion-input type="number" [(ngModel)]="jobInfo.numbermilestones" name="numbermilestones"></ion-input>
+        </ion-item>
+  
+      <ion-item>
         <ion-label fixed>{{ 'START_JOB' | translate }} </ion-label>
         <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="jobInfo.datestart" name = "datestart" pickerFormat="DDDD MMMM YYYY"></ion-datetime>
       </ion-item>

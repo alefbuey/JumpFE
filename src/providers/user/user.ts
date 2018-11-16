@@ -134,4 +134,9 @@ export class User {
     return seq;
   }
 
+  employeeJobStatus(idJob,idEmployee){
+    return this.api.get('employeeJobStatus/'+idJob+'/'+idEmployee).map(res => (res as any) as MemberTeam)
+
+  }
+
 }

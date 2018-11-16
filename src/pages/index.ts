@@ -30,3 +30,6 @@ export const ApplyFormPage = 'ApplyFormPage';
 export const GeneralProfilePage = 'GeneralProfilePage';
 
 export const ListTeamPage = 'ListTeamPage';
+export const ProgressPage = 'ProgressPage'
+export const ChatPage = 'ChatPage';
+export const ProgressEmployeePage = 'ProgressEmployeePage';

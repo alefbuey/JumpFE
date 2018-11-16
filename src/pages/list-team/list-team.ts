@@ -40,4 +40,12 @@ export class ListTeamPage {
 
   }
 
+  goToProgress(user: MemberTeam){
+    this.navCtrl.push('ProgressPage',{idemployee: user.idemployee, idjob: user.idjob})
+
+  }
+
+  goToChat(user: MemberTeam){
+    this.navCtrl.push('ChatPage');
+  }
 }
