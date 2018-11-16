@@ -7,7 +7,13 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class Api {
 
+
+
+
   url: string = 'http://localhost:8100';
+
+
+
 
   constructor(public http: HttpClient) {
   }
