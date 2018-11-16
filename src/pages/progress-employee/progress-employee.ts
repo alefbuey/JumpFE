@@ -71,7 +71,7 @@ export class ProgressEmployeePage {
       cssClass: 'generalalert',
       inputs: [
         {
-          name: 'comment',
+          name: 'commentToEmployer',
           placeholder: 'Comment '
         },
       ],
@@ -84,7 +84,15 @@ export class ProgressEmployeePage {
         },
         {
           text: 'Save',
-          handler: () => {
+          handler: data => {
+            var payload = {
+              idjob : jobEmployee.idjob,
+              idemployee: jobEmployee.idemployee,
+              comment: data.commentToEmployer,
+              toWho: 'employer'
+            }
+
+            this.user.saveComment(payload);
             this.showRate(jobEmployee);
           }
         }
@@ -94,23 +102,24 @@ export class ProgressEmployeePage {
   }
 
   showRate(jobEmployee: MemberTeam){
+    var payload = {
+      idemployee : jobEmployee.idemployee,
+      idjob : jobEmployee.idjob,
+      rankEmployee : jobEmployee.employeeRank
+    }
     const alert = this.alertCtrl.create({
       title: 'Rate your experience',
       cssClass: 'alertstar',
       enableBackdropDismiss:false,
       buttons: [
-           { handler: data => { this.resolveRate(1);}},
-           { handler: data => { this.resolveRate(2);}},
-           { text: '3', handler: data => { this.resolveRate(3);}},
-           { handler: data => { this.resolveRate(4);}},
-           { handler: data => { this.resolveRate(5);}}
+        { handler: () => { payload.rankEmployee = 1; this.user.saveRank(payload);}},
+        { handler: () => { payload.rankEmployee = 2; this.user.saveRank(payload);}},
+        { text: '3', handler: () => { payload.rankEmployee = 3; this.user.saveRank(payload);}},
+        { handler: () => { payload.rankEmployee = 4; this.user.saveRank(payload);}},
+        { handler: () => { payload.rankEmployee = 5; this.user.saveRank(payload);}}
       ]
     });
     alert.present();
-  }
-
-  resolveRate(numero: number){
-    console.log(numero)
   }
 
 }
