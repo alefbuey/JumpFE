@@ -1,29 +1,3 @@
-<!--
-  Generated template for the ApplyFormPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>apply-form</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
-</ion-content>
-
-
-<!--
-  Generated template for the ApplyingJobsPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
@@ -37,34 +11,40 @@
 
 
 <ion-content>
+
+  <div align="center">
+  <div class="add-job" > </div> </div>
+
+  <div class="title">{{jobTitle}} </div>
+
+  <div class="salary">{{ 'SALARY' | translate }}: $ {{jobApply.salary}}</div>
+  
+  
   <form (submit)="applyJob()">
-    <ion-list>
+
+
+    <ion-list inset>    
+     
 
       <ion-item>
-        <h2>{{jobTitle}}</h2>
-      </ion-item>
+        <ion-label floating>{{ 'WHY_APPLY_JOB' | translate }}</ion-label>
+        <ion-textarea rows="3" type="text" [(ngModel)]="jobApply.postedreason" name="postedreason"></ion-textarea>
 
-      <ion-item>
-        <ion-label fixed>{{ 'WHY_TO_HIRE_YOU' | translate }}</ion-label>
-        <ion-input type="text" [(ngModel)]="jobApply.postedreason" name="postedreason"></ion-input>
       </ion-item>
-
       
 
+               
       <ion-item>
-        <ion-label fixed>{{ 'SALARY' | translate }}: {{jobApply.salary}}</ion-label>
-        
-      </ion-item>
-         
-      <ion-item>
-        <ion-label fixed>{{ 'COUNTEROFFER' | translate }}</ion-label>
+        <ion-label floating>{{ 'COUNTER_OFFER' | translate }}</ion-label>
         <ion-input type="number" [(ngModel)]="jobApply.counteroffer" name="counteroffer"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label fixed>{{ 'COUNTEROFFER_REASON' | translate }}</ion-label>
-        <ion-input type="text" [(ngModel)]="jobApply.counterofferreason" name="counterofferreason"></ion-input>
+        <ion-label floating>{{ 'COUNTER_OFFER_REASON' | translate }}</ion-label>
+        <ion-textarea type="text" [(ngModel)]="jobApply.counterofferreason" name="counterofferreason"></ion-textarea>
       </ion-item>
+
+      
 
       <div padding>
         <button ion-button color="primary" block>{{ 'APPLY_THIS_JOB' | translate }}</button>

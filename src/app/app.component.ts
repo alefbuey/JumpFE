@@ -42,8 +42,8 @@ export class MyApp {
     { title: 'Settings', component: 'ContentPage' },
     { title: 'Logout', component: 'LoginPage' },
     { title: 'Cards', component: 'CardsPage'},
-    { title: 'Maps', component: 'MapPage'}
-  ]
+    { title: 'Maps', component: 'MapPage'},
+    ]
 
   constructor(private translate: TranslateService, platform: Platform, public user: User, settings: Settings, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {
     platform.ready().then(() => {

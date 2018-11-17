@@ -28,6 +28,18 @@
       <h2>{{employer.nameEmploye}}</h2>
     </ion-item>
 
+    <div class="job-detail">
+
+    <h2 >Ubicacion</h2>
+    </div>
+
+
+    <div id="map"></div>
+
+  <div padding>
+    <button class= "apply" ion-button (click) = "openApplyForm()" color="primary" block>{{ 'APPLY' | translate }}</button>
+  </div>
+
 
     <div class="job-detail">
     <h2>{{jobDetail.title}}</h2>
@@ -39,17 +51,13 @@
     <p>{{jobDetail.dateend}}</p>
     <p>{{jobDetail.numbervacancies}}</p>
 
-    <button ion-button round full color="secondary" ion-button (click) = "openApplyForm()" color="primary" block>{{ 'APPLY' | translate }}</button>
+    
 
 
   </div>
 
 
-  <div id="map"></div>
-
-  <div padding>
-    <button class= "apply" ion-button (click) = "openApplyForm()" color="primary" block>{{ 'APPLY' | translate }}</button>
-  </div>
+  
 
 
 </ion-content>

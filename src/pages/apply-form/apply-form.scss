@@ -1,3 +1,52 @@
 page-apply-form {
 
+	.title{
+		font-size: 28px;
+		margin: 20px 15px;
+
+
+	}
+	.list{
+		margin: 10px;
+	}
+
+	.salary{
+		font-size: 20px;
+		margin: 20px 15px;
+		width: 90%;
+    	height: 40px;
+    	padding: 7px 10px;
+    	color: #fff;
+    
+		box-sizing: border-box;
+		
+    	border-radius: 4px;
+    	background-color: #FFB84E;
+   	 	resize: none;
+
+	}
+
+	.add-job{
+	margin-top: 20px;
+	padding: center;
+	background: url('../assets/img/Applyjob.png') repeat transparent;
+	background-size: cover;
+	width: 170px;
+	height: 148px;
+
+
+	}
+
+	ion-textarea[type="text"] {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: White;
+    resize: none;
+    box-shadow: #ccc ;
+}
+
 }

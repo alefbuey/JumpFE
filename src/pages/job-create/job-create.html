@@ -11,6 +11,8 @@
   <div align="center">
   <div class="new-job"></div> </div>
 
+ 
+
   <form (submit)="createJob()">
     <ion-list inset>
 
@@ -21,7 +23,7 @@
 
       <ion-item>
         <ion-label floating>{{ 'DESCRIPTION' | translate }}</ion-label>
-        <ion-textarea rows="10"></ion-textarea>
+        <ion-textarea type="text" [(ngModel)]="jobInfo.description" name="description" ></ion-textarea>
       </ion-item>
 
       <ion-item>
@@ -44,12 +46,12 @@
 
       <ion-item>
 
-          <ion-label fixed>{{ 'NUMBER_MILESTONES' | translate }}</ion-label>
+          <ion-label floating>{{ 'NUMBER_MILESTONES' | translate }}</ion-label>
           <ion-input type="number" [(ngModel)]="jobInfo.numbermilestones" name="numbermilestones"></ion-input>
         </ion-item>
   
       <ion-item>
-        <ion-label fixed>{{ 'START_JOB' | translate }} </ion-label>
+        <ion-label floating>{{ 'START_JOB' | translate }} </ion-label>
 
         <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="jobInfo.datestart" name = "datestart" pickerFormat="DDDD MMMM YYYY"></ion-datetime>
       </ion-item>
