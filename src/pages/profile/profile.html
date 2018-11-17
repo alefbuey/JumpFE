@@ -21,7 +21,7 @@
           <ion-col>
             <div class="profile-photo">
               <!-- <button ion-item (click)='updatePhoto()'> -->
-                  <img src="{{profile.image}}">
+                  <img [src]="loadImage(profile.image)">
               <!-- </button> -->
             </div>
           </ion-col>

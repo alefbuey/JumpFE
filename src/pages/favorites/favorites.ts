@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, ModalController, NavController, NavParams } from 'ionic-angular';
 import { JobFeed } from '../../models/job-feed'
-import { Jobs, User } from '../../providers'
+import { Jobs, User, Api } from '../../providers'
 
 /**
  * Generated class for the FavoritesPage page.
@@ -20,7 +20,7 @@ export class FavoritesPage {
   currentJobs : JobFeed[];
  
 
-  constructor(public navCtrl: NavController, public jobs: Jobs, public user: User, public modalCtrl: ModalController){
+  constructor(public navCtrl: NavController, public api: Api, public jobs: Jobs, public user: User, public modalCtrl: ModalController){
     //this.currentJobs = this.jobs.query()
     this.jobs.getFavJobs().subscribe(res => this.currentJobs = res as any as JobFeed[]);
   }
@@ -41,6 +41,10 @@ export class FavoritesPage {
   goToProfile(idEmployer: any){
     this.navCtrl.push('ProfilePage',{idEmployer: idEmployer})
 
+  }
+
+  loadImage(imgUrl){
+    return this.api.url + "/" + imgUrl
   }
 
 }

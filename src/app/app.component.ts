@@ -3,9 +3,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { TranslateService } from '@ngx-translate/core';
 import { Config, Nav, Platform } from 'ionic-angular';
-import { User } from '../providers/user/user'
 import { FirstRunPage } from '../pages';
-import { Settings } from '../providers';
+import { Settings, User, Api } from '../providers';
+
 
 @Component({
   template: `<ion-menu [content]="content">
@@ -17,8 +17,7 @@ import { Settings } from '../providers';
 
 
     <ion-content>
-    <ion-avatar class="avatar" >
-    </ion-avatar>
+    <div class="profilemenu" (click)="openPage({ title: 'Profile', component: 'ProfilePage' })"></div>
       <ion-list>
         <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
           {{p.title}}
@@ -94,4 +93,8 @@ export class MyApp {
       this.nav.push(page.component,{}, { animate: true, duration: 300 });
     }
   }
+
+
+
+
 }

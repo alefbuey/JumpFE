@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Profile} from '../../models/profile';
-import { Api , User } from '../../providers'
+import { Api , User } from '../../providers';
 
 
 @IonicPage()
@@ -21,5 +21,10 @@ export class ProfilePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');
   }
+
+  loadImage(imgUrl){
+    return this.api.url + "/" + imgUrl
+  }
+
 
 }
