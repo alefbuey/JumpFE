@@ -10,7 +10,9 @@ export class Api {
 
 
 
-  url: string = 'http://192.168.88.13:8100';
+
+  url: string = 'http://192.168.88.153:3000';
+
 
 
 

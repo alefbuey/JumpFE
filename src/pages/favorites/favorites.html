@@ -19,11 +19,11 @@
     
     <ion-item>
         <ion-avatar item-start (click)="goToProfile()">
-            <img src="{{job.imageEmployer}}" >
+            <img [src]="loadImage(job.imageEmployer)" >
         </ion-avatar>
       <h2>{{job.nameEmployer}}</h2>
     </ion-item>   
-    <img src = "{{job.imageJob}}"> <!-- <img [src]="job.image"> -->
+    <img [src] = "loadImage(job.imageJob)">
     <button ion-item (click)="openJob(job)">
     <ion-card-content>
       <h2>{{job.title}}</h2>

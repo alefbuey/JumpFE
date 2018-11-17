@@ -24,13 +24,12 @@
     
     <ion-item>
         <ion-avatar item-start (click)="goToProfile()">
-            <img src="{{job.imageEmployer}}" >
+            <img [src] = "loadImage(job.imageEmployer)" >
         </ion-avatar>
       <h2>{{job.nameEmployer}}</h2>
       <button ion-button  item-end clear large icon-start><ion-icon color="dark" name='more'></ion-icon></button>
     </ion-item>   
-    <img src = "{{job.imageJob}}" (click)="openJob(job)">
-    <!-- <img [src]="job.image"> -->
+    <img [src] = "loadImage(job.imageJob)" (click)="openJob(job)">
     
     <ion-row nowrap>
         <ion-col>

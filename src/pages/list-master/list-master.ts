@@ -3,6 +3,7 @@ import { IonicPage, ModalController, NavController } from 'ionic-angular';
 import { JobFeed } from '../../models/job-feed';
 import { Jobs, User } from '../../providers';
 import { JobCreatePage } from '..';
+import { Api } from '../../providers'
 
 @IonicPage()
 @Component({
@@ -13,7 +14,7 @@ export class ListMasterPage {
   currentJobs : JobFeed[];
   myBool = false;
 
-  constructor(public navCtrl: NavController, public jobs: Jobs, public user: User, public modalCtrl: ModalController){
+  constructor(public navCtrl: NavController, public api: Api, public jobs: Jobs, public user: User, public modalCtrl: ModalController){
     //this.currentJobs = this.jobs.query()
     this.jobs.getFeed().subscribe(res => this.currentJobs = res as any as JobFeed[]);
   }
@@ -64,5 +65,9 @@ export class ListMasterPage {
     console.log(data)
     this.jobs.addFavJob(data);
     this.myBool = !this.myBool
+  }
+
+  loadImage(imgUrl){
+    return this.api.url + "/" + imgUrl
   }
 }

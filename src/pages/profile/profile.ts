@@ -22,4 +22,9 @@ export class ProfilePage {
     console.log('ionViewDidLoad ProfilePage');
   }
 
+  loadImage(imgUrl){
+    return this.api.url + "/" + imgUrl
+  }
+
+
 }
