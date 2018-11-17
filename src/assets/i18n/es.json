@@ -66,6 +66,16 @@
   "CREATE_JOB_ERROR": "Lo sentimos, su trabajo no puedo ser creado. Por favor, intente nuevamente.",
 
 
+  "WHY_APPLY_JOB": "¿Porque quieres ser contratado?",
+  "SALARY": "Salario",
+  "COUNTER_OFFER": "¿Alguna Contraoferta?",
+  "APPLY_THIS_JOB": "Aplicar",
+  "COUNTER_OFFER_REASON": "Razon de la Contraoferta",
+
+  "APPLY_JOB_SUCCESS": "Ha aplicado exitosamente",
+
+
+
   "JOB_CREATE_CHOOSE_IMAGE": "Añadir Imagen",
 
   "CARDS_TITLE": "Social",

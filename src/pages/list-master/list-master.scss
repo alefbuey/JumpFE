@@ -16,17 +16,24 @@ page-list-master {
 
 	}
 
-	button.favorites {
+	button.favorites, button {
       	color: #fff;
       	
       	   	 	&.activated {
     		color: #DC3E52 ;
+    			&.checked {
+    		color: #DC3E52
+    			}
+
     	}
    }
 
+   ion-col{
+   	font-size: 2px;
 
-	.cardfoot{
+
+   }
 
 
-	}
+	
 }

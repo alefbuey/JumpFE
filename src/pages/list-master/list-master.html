@@ -32,9 +32,9 @@
     <img src = "{{job.imageJob}}" (click)="openJob(job)">
     <!-- <img [src]="job.image"> -->
     
-    <ion-row>
+    <ion-row nowrap>
         <ion-col>
-              <button ion-button class="favorites" clear small icon-start (click)="addToFavorites(job)">
+              <button ion-button class="favorites"  clear small icon-start (click)="addToFavorites(job)">
               <ion-icon name='heart'></ion-icon> Favorites
 
             </button>
@@ -42,8 +42,7 @@
         <ion-col>
           <button ion-button color="light" clear small icon-start>
               <ion-icon name='share-alt'></ion-icon>
-              Share
-            </button>
+                    </button>
         </ion-col>
         <ion-col>
           <button ion-button color="light" clear small icon-start> <ion-icon name='checkmark-circle'></ion-icon>Verified</button>
