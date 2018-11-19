@@ -1,35 +1,84 @@
 page-profile {
     ion-content {
-        background: #f7f7f7 !important;
-        
+
         .profile-top {
+            background: #FFB84E;
             width: 100%;
             margin: 0;
             .profile-photo {
                 padding-top: 16px;
-                
+                width: 100%;
                 $photoSize: 128px;
-                
+                text-align: center;
+                color: #f4f4f4;
+
                 img {
                     width: $photoSize;
                     height: $photoSize;
                     border-radius: 50%;
                     margin: 0 auto;
                 }
+
+                .circle{
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 100%;
+                    background: #4CADD3;
+                    color: #f4f4f4;
+                    display:inline-block;
+                    text-align:center;
+                    line-height: 40px;
+                    float: right;
+                    font-weight: bold;
+                    font-size: 18px;
+                }
+
+                .flag{
+
+                    float: right;
+                    img {
+                        width: 32px;
+                        height: 26px;
+                        border-radius: 0%;
+                    }
+                }
+            }
+
+            .preferences{
+                width: 100%;
+                height: 35px;
+                background: #4CADD3;
+                color: #f4f4f4;
+                display:inline-block;
+                text-align:center;
+                line-height: 50px;
+                ion-icon {
+                    font-size: 30px; //Preferred size here
+                    margin-left: 7px;
+                }
             }
         }
 
         .profile-detail {
-            margin-top: 24px;
 
             ion-item {
                 ion-icon {
                     font-size: 1.4rem;
                 };
-                p {
-                    padding-top: 6px;
-                }
+
             }
         }
+
+        .tool-segment{
+            background: #FFB84E;
+            color: #f4f4f4;
+        }
+    
+        .tool-preferences{
+            color: #4CADD3;
+        }
+        
     }
+
+
 }

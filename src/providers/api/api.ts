@@ -11,7 +11,7 @@ export class Api {
 
 
 
-  url: string = 'http://192.168.88.153:3000';
+  url: string = 'http://localhost:3000';
 
 
 
