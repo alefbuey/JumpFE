@@ -107,10 +107,25 @@
                   </ion-item>
                 </ion-list>
             </ion-item>
+            <div class="title">
+              Features
+            </div>
+            <div style="display: block">
+              <canvas baseChart
+                      [datasets]="radarChartData"
+                      [labels]="radarChartLabels"
+                      [chartType]="radarChartType"
+                      (chartHover)="chartHovered($event)"
+                      (chartClick)="chartClicked($event)"></canvas>
+            </div>
           </ion-list>
   
           <ion-list *ngSwitchCase="'myjobs'">
-              <div>
+              
+                <div class="title">
+                     Completed Jobs                 
+                </div>
+                <div>
                   <div style="display: block">
                     <canvas baseChart
                             [datasets]="barChartData"
@@ -124,9 +139,40 @@
                   <button (click)="randomize()">Update</button>
                 </div>
 
+                <div class="title">
+                  Completed Jobs by Category
+                </div>
+                <div style="display: block">
+                    <canvas baseChart
+                                [data]="doughnutChartData"
+                                [labels]="doughnutChartLabels"
+                                [chartType]="doughnutChartType"
+                                (chartHover)="chartHovered($event)"
+                                (chartClick)="chartClicked($event)"></canvas>
+                </div>
           </ion-list>
-  
+
           <ion-list *ngSwitchCase="'mybusiness'">
+              <div class="title">
+                  Offered Jobs              
+             </div>
+             <div>
+               <div style="display: block">
+                 <canvas baseChart
+                         [datasets]="barChartData"
+                         [labels]="barChartLabels"
+                         [options]="barChartOptions"
+                         [legend]="barChartLegend"
+                         [chartType]="barChartType"
+                         (chartHover)="chartHovered($event)"
+                         (chartClick)="chartClicked($event)"></canvas>
+               </div>
+               <button (click)="randomize()">Update</button>
+             </div>
+
+                <div class="title">
+                    Completed Jobs by Category
+                  </div>
               <div style="display: block">
                   <canvas baseChart
                               [data]="doughnutChartData"
@@ -134,7 +180,7 @@
                               [chartType]="doughnutChartType"
                               (chartHover)="chartHovered($event)"
                               (chartClick)="chartClicked($event)"></canvas>
-                </div>
+              </div>
           </ion-list>
       </div>
   

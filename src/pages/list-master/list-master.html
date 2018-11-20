@@ -23,7 +23,7 @@
   
     
     <ion-item>
-        <ion-avatar item-start (click)="goToProfile()">
+        <ion-avatar item-start (click)="goToProfile(job.idemployer)">
             <img [src] = "loadImage(job.imageEmployer)" >
         </ion-avatar>
       <h2>{{job.nameEmployer}}</h2>

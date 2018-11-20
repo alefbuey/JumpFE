@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { IonicPageModule } from 'ionic-angular';
-
+import { MomentModule } from 'angular2-moment';
 import { JobDetailPage } from './job-detail';
 
 @NgModule({
@@ -10,7 +10,8 @@ import { JobDetailPage } from './job-detail';
   ],
   imports: [
     IonicPageModule.forChild(JobDetailPage),
-    TranslateModule.forChild()
+    TranslateModule.forChild(),
+    MomentModule
   ],
   exports: [
     JobDetailPage

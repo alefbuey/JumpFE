@@ -86,7 +86,8 @@ export class MyApp {
     // we wouldn't want the back button to show in this scenario
     if (page.title == 'Logout') {
       this.user.logout();
-      this.nav.popToRoot()
+      this.nav.popToRoot();
+      this.nav.push(page.component);
     }else if (page.title == 'Home') {
       this.nav.setRoot(page.component,{}, { animate: true, duration: 300 });      
     }else{

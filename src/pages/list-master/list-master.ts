@@ -53,7 +53,7 @@ export class ListMasterPage {
   }
 
   goToProfile(idEmployer: any){
-    this.navCtrl.push('ProfilePage',{idEmployer: idEmployer})
+    this.navCtrl.push('GeneralProfilePage',{iduser: idEmployer})
 
   }
 
