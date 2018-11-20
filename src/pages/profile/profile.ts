@@ -77,5 +77,7 @@ public randomize():void {
   clone[0].data = data;
   this.barChartData = clone;
 }
-
+loadImage(imgUrl){
+  return this.api.url + "/" + imgUrl
+}
 }
