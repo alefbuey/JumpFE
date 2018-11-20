@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Observable } from 'rxjs';
 import * as moment from 'moment';
 import { Chat, MessageType } from '../../models/chat';
+import { Api } from '../../providers'
 
 /**
  * Generated class for the ChatPage page.
@@ -19,7 +20,7 @@ import { Chat, MessageType } from '../../models/chat';
 export class ChatPage {
   chats: Observable<Chat[]>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public api: Api) {
     this.chats = this.findChats();
   }
 
@@ -85,5 +86,9 @@ export class ChatPage {
  
       return chatsArray;
     });
+  }
+
+  loadImage(imgUrl){
+    return this.api.url + "/" + imgUrl
   }
 }
