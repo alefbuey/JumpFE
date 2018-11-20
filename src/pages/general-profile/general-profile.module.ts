@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { GeneralProfilePage } from './general-profile';
 import { TranslateModule } from '@ngx-translate/core';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -9,7 +10,8 @@ import { TranslateModule } from '@ngx-translate/core';
   ],
   imports: [
     IonicPageModule.forChild(GeneralProfilePage),
-    TranslateModule.forChild()
+    TranslateModule.forChild(),
+    ChartsModule
 
   ],
 })

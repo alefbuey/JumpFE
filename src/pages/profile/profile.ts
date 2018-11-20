@@ -11,27 +11,35 @@ import { Api , User } from '../../providers'
 export class ProfilePage {
   profile : any;
   profileinfo: any;
-  flagimage : 'assets/img/ecuador-flag.png'
 
   //barChart
   public barChartOptions:any = {
     scaleShowVerticalLines: false,
     responsive: true
   };
-  public barChartLabels:string[] = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
+  public barChartLabels:string[] = ['2012', '2013', '2014', '2015', '2016', '2017', '2018'];
   public barChartType:string = 'bar';
   public barChartLegend:boolean = true;
   
   public barChartData:any[] = [
-    {data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'},
-    {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'}
+    {data: [65, 59, 80, 81, 56, 55, 40], label: 'Virtual Jobs'},
+    {data: [28, 48, 40, 19, 86, 27, 90], label: 'Physical Jobs'}
   ];
   
 
   // Doughnut
-  public doughnutChartLabels:string[] = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'];
+  public doughnutChartLabels:string[] = ['Programming', 'Photography', 'Music'];
   public doughnutChartData:number[] = [350, 450, 100];
   public doughnutChartType:string = 'doughnut';
+
+  // Radar
+  public radarChartLabels:string[] = ['Ranking', 'Puntuality', 'Communication', 'Responsability', 'Effectiveness', 'Teaching'];
+
+  public radarChartData:any = [
+    {data: [65, 59, 90, 81, 56, 55, 40], label: 'My Jobs '},
+    {data: [28, 48, 40, 19, 96, 27, 100], label: 'My Business'}
+  ];
+  public radarChartType:string = 'radar';
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public api: Api, public user: User) {
     var idUser = user._user;
@@ -39,6 +47,8 @@ export class ProfilePage {
     this.user.selectProfile(idUser).subscribe(res => this.profile= (res as any) as Profile);
 
   }
+
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');

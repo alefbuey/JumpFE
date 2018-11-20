@@ -13,7 +13,7 @@
   <!--Aqui deberia ir la imagen del trabajo-->
   
 
-  <ion-scroll scrollX="true" style="width:100%;height: 360px">
+  <ion-scroll scrollX="true" style="width:100%;height: 175px">
   <div class="inner">
     <ion-card *ngFor="let img of jobimages">
       <img [src]='img.image'>
@@ -21,41 +21,43 @@
   </div>
   </ion-scroll>
 
-  <ion-item no-lines class="avatar">
-        <ion-avatar item-start (click)="goToProfile()">
-            <img src="{{employer.imageEmployer}}">
-        </ion-avatar>
-      <h2>{{employer.nameEmploye}}</h2>
-    </ion-item>
-
-    <div class="job-detail">
-
-    <h2 >Ubicacion</h2>
-    </div>
-
-
-    <div id="map"></div>
-
-  <div padding>
-    <button class= "apply" ion-button (click) = "openApplyForm()" color="primary" block>{{ 'APPLY' | translate }}</button>
-  </div>
-
-
-    <div class="job-detail">
-    <h2>{{jobDetail.title}}</h2>
-   
-    <p>{{jobDetail.description}}</p>
-    <p>{{jobDetail.jobcost}}</p>
-    <p>{{jobDetail.dateposted}}</p>
-    <p>{{jobDetail.datestart}}</p>
-    <p>{{jobDetail.dateend}}</p>
-    <p>{{jobDetail.numbervacancies}}</p>
-
-    
-
-
-  </div>
-
+  <div class="title">
+          {{jobDetail.title}}
+      </div>
+      
+        <ion-item no-lines class="avatar">
+              <ion-avatar item-start (click)="goToProfile()">
+                  <img src="{{employer.imageEmployer}}">
+              </ion-avatar>
+            <h2>{{employer.nameEmploye}}</h2>
+          </ion-item>
+      
+          <div class="job-detail">
+      
+          <h2 >Ubicacion</h2>
+          </div>
+      
+      
+          <div id="map"></div>
+      
+        <div padding>
+          <button class= "apply" ion-button (click) = "openApplyForm()" color="primary" block>{{ 'APPLY' | translate }}</button>
+        </div>
+      
+      
+          <div class="job-detail">
+         
+          <p>{{jobDetail.description}}</p>
+          <p>{{jobDetail.jobcost}}</p>
+          <p>{{jobDetail.dateposted | amCalendar}}</p>
+          <p>{{jobDetail.datestart | amCalendar}}</p>
+          <p>{{jobDetail.dateend | amCalendar }}</p>
+          <p>{{jobDetail.numbervacancies}}</p>
+      
+          
+      
+      
+        </div>  
 
   
 

@@ -6,54 +6,185 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-      <button ion-button menuToggle>
-          <ion-icon name="menu"></ion-icon>
-      </button>
-    <ion-title>General Profile</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-<ion-content padding *ngIf="profile">
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+      <ion-title> General Profile</ion-title>
+    </ion-navbar>
+  
+   
+  
+  </ion-header>
+  
+  <ion-content *ngIf="profile">
+  
     <ion-card class="profile-top">
-        <ion-row>
-          <ion-col>
-            <div class="profile-photo">
-                  <img src="{{profile.image}}">
-            </div>
-          </ion-col>
-        </ion-row>
-      </ion-card>
-      <ion-list class="profile-detail">
-          <ion-row>      
-            <ion-col no-padding>       
-              <ion-item>
-                    <h4>{{'NAME'| translate}}</h4>
-                    <p>{{profile.name}} {{profile.lastname}}</p>
-              </ion-item>
-              <ion-item>
-                  <h4>{{'ID'| translate}}</h4>
-                  <p>{{profile.nationalidentifier}}</p>
-              </ion-item>
-            </ion-col>  
-          </ion-row>
-        <ion-row>
-          <ion-col no-padding>
+      <ion-row>
+        <ion-col>
+          <div class="profile-photo">
+            <!-- <button ion-item (click)='updatePhoto()'> -->
+                <div class = "circle">
+                    {{rank}}
+                </div>
+                <img src="{{profile.image}}">
+                <div class = "flag"> 
+                    <img src= "../../assets/imgs/ecuador.png">
+                  </div>
+                {{profile.name}} {{profile.lastname}}
+  
+            <!-- </button> -->
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <div class = "preferences">
+          
+            <ion-icon name="camera"></ion-icon>
+            <ion-icon name="videocam"></ion-icon>
+            <ion-icon name="logo-windows"></ion-icon>
+            <ion-icon name="musical-notes"></ion-icon>
+  
+        </div>
+      </ion-row>
+    </ion-card>
+  
+    <div>
+        <ion-segment [(ngModel)]="profileinfo" color="secondary" >
+            <ion-segment-button value="general">
+              <ion-icon name="person"></ion-icon>
+              General
+            </ion-segment-button>
+            <ion-segment-button value="myjobs">
+              <ion-icon name="clipboard"></ion-icon>
+              My Jobs
+            </ion-segment-button>
+            <ion-segment-button value="mybusiness">
+                <ion-icon name="briefcase"></ion-icon>
+              My Business
+              </ion-segment-button>
+          </ion-segment>
+      </div>
+    
+    
+    
+      <div [ngSwitch]="profileinfo">
+          <ion-list *ngSwitchCase="'general'">
             <ion-item>
-              <h4>About Me</h4>
-              <p>{{profile.about}}</p>
-            </ion-item>
-          </ion-col>
-        </ion-row>    
-        <ion-item icon-left>
-          <h4><ion-icon name="mail"></ion-icon>Email Address</h4>
-          <p>{{profile.email}}</p>
-        </ion-item>
-        <ion-item icon-left>
-            <h4><ion-icon name="call"></ion-icon>Cellphone</h4>
-            <p>{{profile.cellphone}}</p>
-        </ion-item>
-      </ion-list>
+                <ion-list class="profile-detail">
+                    <ion-row>      
+                      <ion-col no-padding>       
+                        <ion-item>
+                              <h4>{{'NAME'| translate}}</h4>
+                              <p>{{profile.name}} {{profile.lastname}}</p>
+                        </ion-item>
+                        <ion-item>
+                            <h4>{{'ID'| translate}}</h4>
+                            <p>{{profile.nationalidentifier}}</p>
+                        </ion-item>
+                      </ion-col>  
+                    </ion-row>
+                  <ion-row>
+                    <ion-col no-padding>
+                      <ion-item>
+                        <h4>About Me</h4>
+                        <p>{{profile.about}}</p>
+                      </ion-item>
+                    </ion-col>
+                  </ion-row>    
+                  <ion-item icon-left>
+                    <h4><ion-icon name="mail"></ion-icon>Email Address</h4>
+                    <p>{{profile.email}}</p>
+                  </ion-item>
+                  <ion-item icon-left>
+                      <h4><ion-icon name="call"></ion-icon>Cellphone</h4>
+                      <p>{{profile.cellphone}}</p>
+                  </ion-item>
 
-</ion-content>
+                  <ion-item icon-left>
+                      <h4><ion-icon name="pricetags"></ion-icon>COMMENTS</h4>
+
+                  </ion-item>
+                </ion-list>
+            </ion-item>
+            <div class="title">
+              Features
+            </div>
+            <div style="display: block">
+              <canvas baseChart
+                      [datasets]="radarChartData"
+                      [labels]="radarChartLabels"
+                      [chartType]="radarChartType"
+                      (chartHover)="chartHovered($event)"
+                      (chartClick)="chartClicked($event)"></canvas>
+            </div>
+          </ion-list>
+  
+          <ion-list *ngSwitchCase="'myjobs'">
+              
+                <div class="title">
+                     Completed Jobs                 
+                </div>
+                <div>
+                  <div style="display: block">
+                    <canvas baseChart
+                            [datasets]="barChartData"
+                            [labels]="barChartLabels"
+                            [options]="barChartOptions"
+                            [legend]="barChartLegend"
+                            [chartType]="barChartType"
+                            (chartHover)="chartHovered($event)"
+                            (chartClick)="chartClicked($event)"></canvas>
+                  </div>
+                  <button (click)="randomize()">Update</button>
+                </div>
+
+                <div class="title">
+                  Completed Jobs by Category
+                </div>
+                <div style="display: block">
+                    <canvas baseChart
+                                [data]="doughnutChartData"
+                                [labels]="doughnutChartLabels"
+                                [chartType]="doughnutChartType"
+                                (chartHover)="chartHovered($event)"
+                                (chartClick)="chartClicked($event)"></canvas>
+                </div>
+          </ion-list>
+
+          <ion-list *ngSwitchCase="'mybusiness'">
+              <div class="title">
+                  Offered Jobs              
+             </div>
+             <div>
+               <div style="display: block">
+                 <canvas baseChart
+                         [datasets]="barChartData"
+                         [labels]="barChartLabels"
+                         [options]="barChartOptions"
+                         [legend]="barChartLegend"
+                         [chartType]="barChartType"
+                         (chartHover)="chartHovered($event)"
+                         (chartClick)="chartClicked($event)"></canvas>
+               </div>
+               <button (click)="randomize()">Update</button>
+             </div>
+
+                <div class="title">
+                    Completed Jobs by Category
+                  </div>
+              <div style="display: block">
+                  <canvas baseChart
+                              [data]="doughnutChartData"
+                              [labels]="doughnutChartLabels"
+                              [chartType]="doughnutChartType"
+                              (chartHover)="chartHovered($event)"
+                              (chartClick)="chartClicked($event)"></canvas>
+              </div>
+          </ion-list>
+      </div>
+  
+  
+  
+  </ion-content>
+  
