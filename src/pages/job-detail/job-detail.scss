@@ -4,7 +4,7 @@ page-job-detail {
   
     .topcontent {
       width: 100%;
-      margin: 10px;
+      margin: 4px;
       position: relative;
 
       .title{
@@ -29,7 +29,7 @@ page-job-detail {
           width: 100%;
           $photoSize: 55px;
           position: relative;
-          left: 275px;
+          left: 265px;
 
           img {
               width: $photoSize;
@@ -54,12 +54,10 @@ page-job-detail {
               font-size: 18px;
           }
           .namestyle{
-            width: 25px;
-            height: 25px;
-            line-height: 40px;
+            line-height: 20px;
             position: absolute;
-            left: 50px;
-            font-size: 4px;
+            font-size: 10px;
+            text-align: center;
           }
 
           .flag{

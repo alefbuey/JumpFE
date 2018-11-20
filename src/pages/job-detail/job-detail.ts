@@ -15,7 +15,7 @@ import { Map } from '../../providers/map/map'
 
 export class JobDetailPage {
   jobDetail: any;
-
+  rank : string;
   //poner luego en la base
   jobimages: any;
   employer = {
@@ -33,6 +33,8 @@ export class JobDetailPage {
     var jobMode = navParams.get('jobMode');
     var imageEmployer = navParams.get('imageEmployer');
     var nameEmploye = navParams.get('nameEmploye');
+    this.rank = Math.round(Math.random()*5) +"."+Math.round(Math.random()*9);
+
 
     this.employer.imageEmployer = imageEmployer;
     this.employer.nameEmploye = nameEmploye;
