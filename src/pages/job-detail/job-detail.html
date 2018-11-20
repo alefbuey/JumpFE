@@ -38,44 +38,66 @@
                       </div>
       
                 <!-- </button> -->
+                <div class = "namestyle">
+                    {{employer.nameEmploye}}
+        
+                </div>
               </div>
-              <!-- <div class = "namestyle">
-                  {{employer.nameEmploye}}
-      
-              </div> -->
+
       
         </div>
- 
+        <ion-list class="job-detail">
+            <ion-row>      
+              <ion-col no-padding>       
+                <ion-item>
+                      <h4>Description</h4>
+                      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                          sed diam nonummy nibh euismod tincidunt ut laoreet
+                          dolore magna aliquam erat volutpat. Ut wisi enim ad
+                          minim veniam, quis nostrud exerci tation ullamcorper
+                          suscipit lobortis nisl ut aliquip ex ea commodo conse-
+                          quat.
+                          </p>
+                      <!-- <p>{{jobDetail.description}}</p> -->
+                      <!-- <p>{{jobDetail.numbervacancies}}</p> -->
+                  
+                </ion-item>
+                <ion-item>
+                    <h4>Cost</h4>
+                    <p>1500.0</p>
+                    <!-- <p>{{jobDetail.jobcost}}</p> -->
+                  </ion-item>
+              </ion-col>  
+            </ion-row>
+          <ion-row>
+            <ion-col no-padding>
+              <ion-item>
+                <h4>Start Date</h4>
+                <!-- <p>{{jobDetail.datestart | amCalendar}}</p> -->
+                <p>21/April/2019</p>
+              </ion-item>
+            </ion-col>
+          </ion-row>    
+          <ion-item icon-left>
+            <h4>End Date</h4>
+            <!-- <p>{{jobDetail.dateend | amCalendar }}</p> -->
+            <p>21/November/2019</p>
+          </ion-item>
+        </ion-list>
 
+        
 
       
-          <div class="job-detail">
+          <!-- <div class="job-detail">
       
-          <h2 >Ubicacion</h2>
-          </div>
+          <h2 >Place</h2>
+          </div> -->
       
-      
-          <div id="map"></div>
+          <!-- <div id="map"></div> -->
       
         <div padding>
           <button class= "apply" ion-button (click) = "openApplyForm()" color="primary" block>{{ 'APPLY' | translate }}</button>
-        </div>
-      
-      
-          <div class="job-detail">
-         
-          <p>{{jobDetail.description}}</p>
-          <p>{{jobDetail.jobcost}}</p>
-          <p>{{jobDetail.dateposted | amCalendar}}</p>
-          <p>{{jobDetail.datestart | amCalendar}}</p>
-          <p>{{jobDetail.dateend | amCalendar }}</p>
-          <p>{{jobDetail.numbervacancies}}</p>
-      
-          
-      
-      
-        </div>  
-
+        </div>         
   
 
 
