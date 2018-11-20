@@ -18,7 +18,7 @@
           
           <ion-item>
               <ion-avatar item-start>
-                  <img src="{{job.imageEmployer}}">
+                  <img [src]="loadImage(job.imageEmployer)">
               </ion-avatar>
             <h2>{{job.nameEmployer}}</h2>
           </ion-item>    
