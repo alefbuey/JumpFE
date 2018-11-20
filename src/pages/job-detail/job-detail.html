@@ -21,16 +21,33 @@
   </div>
   </ion-scroll>
 
-  <div class="title">
-          {{jobDetail.title}}
-      </div>
+
+        <div  class="topcontent">
+            <div class="title">
+                {{jobDetail.title}}
+            </div>
+    
+            <div class="profile-photo">
+                <!-- <button ion-item (click)='updatePhoto()'> -->
+                    <div class = "circle">
+                        {{rank}}
+                    </div>
+                    <img src="{{employer.imageEmployer}}">
+                    <div class = "flag"> 
+                        <img src= "../../assets/imgs/ecuador.png">
+                      </div>
       
-        <ion-item no-lines class="avatar">
-              <ion-avatar item-start (click)="goToProfile()">
-                  <img src="{{employer.imageEmployer}}">
-              </ion-avatar>
-            <h2>{{employer.nameEmploye}}</h2>
-          </ion-item>
+                <!-- </button> -->
+              </div>
+              <!-- <div class = "namestyle">
+                  {{employer.nameEmploye}}
+      
+              </div> -->
+      
+        </div>
+ 
+
+
       
           <div class="job-detail">
       

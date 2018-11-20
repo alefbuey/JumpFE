@@ -19,7 +19,7 @@ export class GeneralProfilePage {
   profile : any;
   iduser : number;
   profileinfo: any;
-  rank : number;
+  rank : string;
 
   //barChart
   public barChartOptions:any = {
@@ -53,7 +53,7 @@ export class GeneralProfilePage {
   constructor(public navCtrl: NavController, public navParams: NavParams,public api: Api, public user: User) {
     var iduser = navParams.get('iduser');
     this.profileinfo = "general";
-    this.rank = Math.round(Math.random()*5);
+    this.rank = Math.round(Math.random()*5) +"."+Math.round(Math.random()*9);
     this.user.selectProfile(iduser).subscribe(res => this.profile= (res as any) as Profile);
   }
 
@@ -83,6 +83,10 @@ public randomize():void {
   let clone = JSON.parse(JSON.stringify(this.barChartData));
   clone[0].data = data;
   this.barChartData = clone;
+}
+
+loadImage(imgUrl){
+  return this.api.url + "/" + imgUrl
 }
 
 }
