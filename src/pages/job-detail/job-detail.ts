@@ -67,7 +67,9 @@ export class JobDetailPage {
 
 
 
-
+  loadImage(imgUrl){
+    return this.api.url + "/" + imgUrl
+  }
   
 
 
