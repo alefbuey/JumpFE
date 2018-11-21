@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { MemberTeam } from '../../models/applicant'
-import { User } from '../../providers'
+import { User, Api } from '../../providers'
 import { TranslateService } from '@ngx-translate/core';
 
 /**
@@ -23,7 +23,8 @@ export class ListTeamPage {
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    public user: User
+    public user: User,
+    public api: Api
     ) {
 
     var idJob = navParams.get('idJob')
@@ -47,5 +48,9 @@ export class ListTeamPage {
 
   goToChat(user: MemberTeam){
     this.navCtrl.push('ChatPage');
+  }
+
+  loadImage(imgUrl){
+    return this.api.url + "/" + imgUrl
   }
 }
