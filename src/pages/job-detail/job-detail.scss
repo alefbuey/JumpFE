@@ -11,8 +11,8 @@ page-job-detail {
         background: #FFB84E;
         color: #f4f4f4;
         border-radius: 10px;
-        width: 50%;
-        height: 30px;
+        width: 75%;
+        height: auto;
         display:inline-block;
         text-align:center;
         line-height: 30px;
@@ -22,14 +22,14 @@ page-job-detail {
         font-size: 16px;
         margin-top: 10px;
         margin-left: 10px;
-        position: absolute;
+        position: relative;
         left: 10px;
       }
       .profile-photo {
           width: 100%;
           $photoSize: 55px;
           position: relative;
-          left: 265px;
+          float: right;
 
           img {
               width: $photoSize;
@@ -51,7 +51,7 @@ page-job-detail {
               top: 0;
               left: 45px;
               font-weight: bold;
-              font-size: 18px;
+              font-size: 13px;
           }
           .namestyle{
             line-height: 20px;

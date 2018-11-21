@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController, AlertController } from 'ionic-angular';
-import { User } from '../../providers'
+import { User, Api } from '../../providers'
 import { Applicant } from '../../models/applicant'
 import { TranslateService } from '@ngx-translate/core';
 
@@ -30,7 +30,8 @@ export class ListApplicantsPage {
     public user: User, 
     private alertCtrl: AlertController,     
     public toastCtrl: ToastController,
-    public translateService: TranslateService
+    public translateService: TranslateService,
+    public api: Api
     ) {
 
     var idJob = navParams.get('idJob')
@@ -169,5 +170,9 @@ export class ListApplicantsPage {
   goToProfile(idEmployer: any){
     this.navCtrl.push('GeneralProfilePage',{iduser: idEmployer})
 
+  }
+
+  loadImage(imgUrl){
+    return this.api.url + "/" + imgUrl
   }
 }
