@@ -16,7 +16,7 @@ page-list-master {
 
 	}
 
-	button.favorites, button {
+	button.favorites, {
       	color: #fff;
       	
       	   	 	&.activated {
@@ -28,11 +28,7 @@ page-list-master {
     	}
    }
 
-   ion-col{
-   	font-size: 2px;
-
-
-   }
+   
 
 
 	
