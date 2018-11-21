@@ -11,19 +11,16 @@ page-job-detail {
         background: #FFB84E;
         color: #f4f4f4;
         border-radius: 10px;
-        width: 75%;
+        width: 85%;
         height: auto;
         display:inline-block;
         text-align:center;
         line-height: 30px;
-        top: 0;
-        right: 110px;
         font-weight: bold;
         font-size: 16px;
-        margin-top: 10px;
-        margin-left: 10px;
+        margin: 20px;
         position: relative;
-        left: 10px;
+        left: 5px;
       }
       .profile-photo {
           width: 100%;
@@ -75,8 +72,8 @@ page-job-detail {
       }
     }
   .inner{
-    width: 800px;
-    height: 50px;
+    width: 910px;
+    height: 200px;
     ion-card{
       display: table-cell;
       border: solid 1px #ccc;
@@ -125,6 +122,18 @@ ion-content{
     }
   }
 }
+
+.cuadro{
+    width: 95%;
+    height: 135px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: White;
+    resize: none;
+    margin: auto;
+  }
   
 
 }
