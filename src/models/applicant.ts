@@ -10,6 +10,7 @@ export class Applicant {
   
   }
 
+  
   export interface Applicant{
         idemployee: number,
         username: string,
